@@ -1,16 +1,9 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import YouTube from 'react-native-youtube'
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -18,15 +11,15 @@ export default class App extends Component<Props> {
         <YouTube
   videoId="KVZ-P-ZI6W4"   // The YouTube video ID
   play={true}             // control playback of video with true/false
-  fullscreen={true}       // control whether the video should play in fullscreen or inline
+  //fullscreen={true}       // control whether the video should play in fullscreen or inline
   loop={true}             // control whether the video should loop when ended
   apiKey="AIzaSyAgSIGESBf36Pyr3N-2hpJ9Nu4WEHBmtaw"
-  onReady={e => this.setState({ isReady: true })}
+  onReady={() => this.setState({ isReady: true })}
   onChangeState={e => this.setState({ status: e.state })}
   onChangeQuality={e => this.setState({ quality: e.quality })}
   onError={e => this.setState({ error: e.error })}
  
-  style={{ alignSelf: 'stretch', height: 300 }}
+  style={styles.backgroundVideo}
 />
       </View>
     );
@@ -49,6 +42,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },backgroundVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
   },
 
   
