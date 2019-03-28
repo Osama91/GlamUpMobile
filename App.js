@@ -1,57 +1,44 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import YouTube from 'react-native-youtube'
+import {
+  createStackNavigator
+} from 'react-navigation';
+import {WalkThrough} from './Components/WalkThroughComponent'
+export const routes = {
+  WalkThrough: { screen: WalkThrough, title: 'WalkThrough' },
 
-
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>        
-        <YouTube resizeMode="cover"
-        controls={0}
-        autoplay={true}
-  videoId="KVZ-P-ZI6W4"   // The YouTube video ID
-  play={true}             // control playback of video with true/false
-  //fullscreen={true}       // control whether the video should play in fullscreen or inline
-  loop={true}             // control whether the video should loop when ended
-  apiKey="AIzaSyAgSIGESBf36Pyr3N-2hpJ9Nu4WEHBmtaw"
-  onReady={() => this.setState({ isReady: true })}
-  onChangeState={e => this.setState({ status: e.state })}
-  onChangeQuality={e => this.setState({ quality: e.quality })}
-  onError={e => this.setState({ error: e.error })} 
-  style={styles.backgroundVideo}
-/>
-<Text style={styles.welcome}>GlamUp</Text>
-<Text style={styles.welcome}>Login</Text>
-      </View>
-    );
-  }
 }
+const App = createStackNavigator(routes, {
+  // navigationOptions: ({ navigation }) => {
+  //   const { routeName, index } = navigation.state;
+  //   if (routeName == 'Splash')
+  //     return ({ headerMode: 'none', header: null, });
+  //   else if (routeName == 'Main' && index == 0)
+  //     return ({
+  //       headerMode: 'float',
+  //       headerLeft: <Icon name="menu" size={40} style={{ color: '#000', alignSelf: 'center', marginEnd: 15, }}
+  //         onPress={() => navigation.openDrawer()} />,
+  //       headerRight:
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-    color:'#ffffff',
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },backgroundVideo: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-  },
+  //         <View style={{ flexDirection: 'row', margin: 2, justifyContent: 'space-between', }}>
 
-  
+  //           <Icon name="heart-outlined" size={40} style={{ color: '#000', alignSelf: 'center', marginEnd: 5, }}
+  //             onPress={() => navigation.navigate('WishList', {})} />
+  //           <Icon name="shopping-cart" size={40} style={{ color: '#000', alignSelf: 'center', marginEnd: 5, }}
+  //             onPress={() => navigation.navigate('Cart', {})} />
+  //         </View>
+  //       ,
+  //       // headerRight:          
+  //       // <Icon name="heart-outlined" size={40} style={{ color: '#000', alignSelf: 'center', marginEnd: 15, }}
+  //       //onPress={() => navigation.navigate('WishList', {})} />,
+  //     });
+  //   else if (routeName == 'Main') {
+  //     return ({ headerMode: 'none', header: null });
+  //   }
+  //   // return  ({ headerMode: 'screen'});  
+
+
+
+  // }
+  //drawerWidth: Constant.width * 0.88,
 });
+
+export default App;
