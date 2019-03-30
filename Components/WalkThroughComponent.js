@@ -3,7 +3,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import YouTube from 'react-native-youtube'
 
 
-export default class WalkThrough extends Component {
+ class WalkThrough extends Component {
     render() {
       return (
         <View style={styles.container}>        
@@ -55,4 +55,4 @@ export default class WalkThrough extends Component {
   
     
   });
-  
+  export default WalkThrough;

@@ -1,7 +1,7 @@
 import {
   createStackNavigator
 } from 'react-navigation';
-import {WalkThrough} from './Components/WalkThroughComponent'
+import WalkThrough from './Components/WalkThroughComponent'
 export const routes = {
   WalkThrough: { screen: WalkThrough, title: 'WalkThrough' },
 
