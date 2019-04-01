@@ -1,16 +1,18 @@
 import {
-  createStackNavigator
-} from 'react-navigation';
+  createStackNavigator,
+  createAppContainer
+} from 'react-navigation'
 import WalkThrough from './Components/WalkThroughComponent'
 export const routes = {
   WalkThrough: { screen: WalkThrough, title: 'WalkThrough' },
 
 }
-const App = createStackNavigator(routes, {
-  // navigationOptions: ({ navigation }) => {
-  //   const { routeName, index } = navigation.state;
-  //   if (routeName == 'Splash')
-  //     return ({ headerMode: 'none', header: null, });
+const RootStack  = createStackNavigator(routes, {
+  navigationOptions: ({ navigation }) => {
+    const { routeName, index } = navigation.state;
+    if (routeName == 'WalkThrough')
+      return ({ headerMode: 'none', header: null, });
+  }
   //   else if (routeName == 'Main' && index == 0)
   //     return ({
   //       headerMode: 'float',
@@ -40,5 +42,7 @@ const App = createStackNavigator(routes, {
   // }
   //drawerWidth: Constant.width * 0.88,
 });
+
+const App = createAppContainer(RootStack);
 
 export default App;
