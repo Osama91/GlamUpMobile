@@ -25,12 +25,16 @@ class WalkThrough extends Component {
             <TouchableOpacity style={styles.WhiteBotton} >
               <Text style={{color:'#FFFFFF'}} >Skip</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.WhiteBotton}  >
+            <TouchableOpacity onPress={this.SignUp} style={styles.WhiteBotton}  >
               <Text style={{color:'#FFFFFF'}} >Sign Up</Text></TouchableOpacity>
           </View>
         </View>
       </View>
     );
+  }
+  SignUp = () => {
+    let r = this.props.navigation.navigate('SignUp');
+    
   }
 }
 

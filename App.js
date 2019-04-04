@@ -3,9 +3,10 @@ import {
   createAppContainer
 } from 'react-navigation'
 import WalkThrough from './Components/WalkThroughComponent'
+import SignUp from './Components/SignUpComponent'
 export const routes = {
   WalkThrough: { screen: WalkThrough, title: 'WalkThrough' },
-
+  SignUp:{ screen: SignUp, title: 'SignUp' },
 }
 const RootStack  = createStackNavigator(routes, {
   navigationOptions: ({ navigation }) => {
