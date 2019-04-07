@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CheckBox } from 'react-native-elements'
 import { Platform, StyleSheet, Text, View, Button, TouchableOpacity, Image } from 'react-native';
 import YouTube from 'react-native-youtube'
 import { styles } from './styles'
@@ -73,6 +74,12 @@ class SignUp extends Component {
           }
         />
 
+<CheckBox
+    
+  title='I agree to Glamup privacy Policy'
+  //checked={this.state.checked}
+/>
+        
 <Button
   onPress={this.Login()}
   title="IF you are a member Login"
