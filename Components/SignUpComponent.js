@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import { CheckBox } from 'react-native-elements'
-import { Platform, StyleSheet, Text, View, Button, TouchableOpacity, Image } from 'react-native';
-import YouTube from 'react-native-youtube'
+import { View } from 'react-native';
 import { styles } from './styles'
+import { SocialIcon, Input } from 'react-native-elements'
+import { Button, Text } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Input } from 'react-native-elements';
-class SignUp extends Component { 
+class SignUp extends Component {
   constructor(props) {
-  super(props)
+    super(props)
 
-  this.state = {
-    email: '',
-    emailError: '',
-    password: '',
-    passwordError: ''
+    this.state = {
+      email: '',
+      emailError: '',
+      password: '',
+      passwordError: '',
+      checked: false
+    }
   }
-}
   render() {
     return (
-      <View >
+      <View style={styles.containerWhite} >
         {/* <image  source={require('../Assets/images/SignUpBg.png')}  >
 
 </image> */}
@@ -74,27 +75,43 @@ class SignUp extends Component {
           }
         />
 
-<CheckBox
-    
-  title='I agree to Glamup privacy Policy'
-  //checked={this.state.checked}
-/>
-        
-<Button
-  onPress={this.Login()}
-  title="IF you are a member Login"
-  color="black"
-  accessibilityLabel="IF you are a member Login"
-/>
+        <CheckBox
+
+          title='I agree to Glamup privacy Policy'
+          checkedColor='#D1968F'
+          checked={this.state.checked}
+          onPress={() => this.setState({ checked: !this.state.checked })}
+        />
+
+        <Button style={{ margin: 10 }}
+          onPress={this.Login()} uppercase={false}
+          buttonStyle={{ backgroundColor: "#D1968F" }}
+          containerStyle={{ backgroundColor: "#D1968F" }}
+          rounded block>
+          <Text uppercase={false}>Sign Up</Text>
+        </Button>
+
+        <Button rounded iconLeft block style={{ margin: 10 }}  >
+          <Icon active name="facebook" />
+          <Text uppercase={false}>Sign In With Facebook</Text>
+        </Button>
+      
+
+        <Button style={styles.bottom}
+          onPress={this.Login()} 
+          buttonStyle={{ backgroundColor: "#D1968F" }}
+          containerStyle={{ backgroundColor: "#D1968F" }}
+          full  dark >
+          <Text color='Black' uppercase={false} >If you are a member Login</Text>
+        </Button>
+
       </View>
     );
   }
   SignUp = () => {
-    let r = this.props.navigation.navigate('SignUp');
 
   }
   Login = () => {
-    let r = this.props.navigation.navigate('Login');
 
   }
 }

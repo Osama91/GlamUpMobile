@@ -1,6 +1,7 @@
 import {Platform, StyleSheet, Text, View} from 'react-native';
 const mainThemeColor='#FFFFFF'
 const styles = StyleSheet.create({
+
     BottomView :{
       flex: 1,
   justifyContent: 'flex-end',
@@ -25,6 +26,16 @@ WhiteBotton:{
   borderColor:'#FFFFFF'
     
   
+},
+containerWhite:{
+  flex: 1,  
+ 
+},
+bottom: {
+position:'absolute',
+bottom:0,
+flex:1,
+width: '100%', 
 },
     container: {
       flex: 1,
