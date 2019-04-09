@@ -5,6 +5,7 @@ import { styles } from './styles'
 import { SocialIcon } from 'react-native-elements'
 import { Button, Text,Input,Item } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { LoginButton, AccessToken } from 'react-native-fbsdk';
 class SignUp extends Component {
   constructor(props) {
     super(props)
@@ -115,11 +116,29 @@ header:null,
           <Text uppercase={false}>Sign Up With Facebook</Text>
         </Button>
        */}
-        <SocialIcon
-          title='Sign Up With Facebook'
-          button
-          type='facebook'
-        />
+
+<LoginButton
+          onLoginFinished={
+            (error, result) => {
+              if (error) {
+                console.log("login has error: " + result.error);
+              } else if (result.isCancelled) {
+                console.log("login is cancelled.");
+              } else {
+                AccessToken.getCurrentAccessToken().then(
+                  (data) => {
+                    console.log(data.accessToken.toString())
+                  }
+                )
+              }
+            }
+          }
+          onLogoutFinished={() => console.log("logout.")}/>
+          {/* <SocialIcon
+            title='Sign Up With Facebook'
+            button
+            type='facebook'
+          /> */}
         {/* <Button rounded iconLeft block style={{ margin: 10 }}  >
           <Icon active name="instagram"  color='red' />
           <Text uppercase={false}>Sign Up With instagram</Text>
