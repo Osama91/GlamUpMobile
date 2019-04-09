@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { CheckBox } from 'react-native-elements'
-import { View } from 'react-native';
+import { View, Image,ScrollView } from 'react-native';
 import { styles } from './styles'
-import { SocialIcon, Input } from 'react-native-elements'
-import { Button, Text } from 'native-base';
+import { SocialIcon } from 'react-native-elements'
+import { Button, Text,Input,Item } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome';
 class SignUp extends Component {
   constructor(props) {
@@ -17,19 +17,34 @@ class SignUp extends Component {
       checked: false
     }
   }
+  static navigationOptions = ({ navigation }) => {
+    return {
+header:null,
+      headerMode:'none'   ,
+            
+    };
+  };
   render() {
     return (
-      <View style={styles.containerWhite} >
-        {/* <image  source={require('../Assets/images/SignUpBg.png')}  >
+      
+      <ScrollView style={styles.containerWhite} >
+          
+          <Image resizeMode='stretch'
+        source={require('../Assets/Images/SignUpBg.png')} />
+      <Icon name="arrow-left"  size={25}  style={{ position: 'absolute', top: 5, left: 10,color: 'white'  }} 
+        onPress={() =>
+          navigation.navigate('WalkThrough', {})
+        } />
 
-</image> */}
 
-        <Input onChangeText={value => this.setState({ FullName: value.trim() })}
-          // onBlur={() => {
-          //   this.setState({
-          //     emailError: validate('email', this.state.email)
-          //   })
-          // }}
+<Item success bordered>
+<Icon name='user' />  
+            <Text onChangeText={value => this.setState({ FullName: value.trim() })}
+             placeholder='Full Name'/>
+            
+          </Item>
+
+        <Input        
           error={this.state.emailError}
           placeholder='Full Name'
           leftIcon={
@@ -100,30 +115,31 @@ class SignUp extends Component {
           <Text uppercase={false}>Sign Up With Facebook</Text>
         </Button>
        */}
-       <SocialIcon
-  title='Sign Up With Facebook'
-  button
-  type='facebook'
-/>
+        <SocialIcon
+          title='Sign Up With Facebook'
+          button
+          type='facebook'
+        />
         {/* <Button rounded iconLeft block style={{ margin: 10 }}  >
           <Icon active name="instagram"  color='red' />
           <Text uppercase={false}>Sign Up With instagram</Text>
         </Button> */}
-
-        <SocialIcon
-  button title="Sign Up With instagram"
-  light
-  type='instagram'
-/>
+ 
+        <SocialIcon style={{marginBottom:50}}
+          button title="Sign Up With instagram"
+          light
+          type='instagram'
+        />
         <Button style={styles.bottom}
-          onPress={this.Login()} 
+          onPress={this.Login()}
           buttonStyle={{ backgroundColor: "#D1968F" }}
           containerStyle={{ backgroundColor: "#D1968F" }}
-          full  dark >
+          full dark >
           <Text color='Black' uppercase={false} >If you are a member Login</Text>
         </Button>
 
-      </View>
+      </ScrollView>
+        
     );
   }
   SignUp = () => {

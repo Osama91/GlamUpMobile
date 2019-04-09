@@ -1,7 +1,12 @@
 import { Platform, StyleSheet, Text, View } from 'react-native';
 const mainThemeColor = '#FFFFFF'
 const styles = StyleSheet.create({
-
+  input: {
+    borderColor: bordersColor, borderWidth: 1,
+    borderRadius: 5, minWidth: 100, height: 40,
+    backgroundColor: inputBackground, marginBottom: 15,
+    textAlign: 'center',
+},
   BottomView: {
     flex: 1,
     justifyContent: 'flex-end',
