@@ -83,20 +83,38 @@ class SignUp extends Component {
           onPress={() => this.setState({ checked: !this.state.checked })}
         />
 
-        <Button style={{ margin: 10 }}
+        <Button style={styles.SignUpBotton}
           onPress={this.Login()} uppercase={false}
-          buttonStyle={{ backgroundColor: "#D1968F" }}
-          containerStyle={{ backgroundColor: "#D1968F" }}
           rounded block>
           <Text uppercase={false}>Sign Up</Text>
         </Button>
 
-        <Button rounded iconLeft block style={{ margin: 10 }}  >
-          <Icon active name="facebook" />
-          <Text uppercase={false}>Sign In With Facebook</Text>
-        </Button>
-      
+        {/* <SocialIcon
+  title='Sign Up'
+  button
+  
+/> */}
 
+        {/* <Button rounded iconLeft block style={{ margin: 10 }}  >
+          <Icon active name="facebook"  color='white' />
+          <Text uppercase={false}>Sign Up With Facebook</Text>
+        </Button>
+       */}
+       <SocialIcon
+  title='Sign Up With Facebook'
+  button
+  type='facebook'
+/>
+        {/* <Button rounded iconLeft block style={{ margin: 10 }}  >
+          <Icon active name="instagram"  color='red' />
+          <Text uppercase={false}>Sign Up With instagram</Text>
+        </Button> */}
+
+        <SocialIcon
+  button title="Sign Up With instagram"
+  light
+  type='instagram'
+/>
         <Button style={styles.bottom}
           onPress={this.Login()} 
           buttonStyle={{ backgroundColor: "#D1968F" }}
