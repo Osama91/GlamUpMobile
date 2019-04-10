@@ -156,18 +156,12 @@ header:null,
           full dark >
           <Text color='Black' uppercase={false} >If you are a member Login</Text>
         </Button>
-
-      </ScrollView>
-        
+      </ScrollView>      
     );
   }
   SignUp = () => {
-
   }
   Login = () => {
-
   }
 }
-
-
 export default SignUp;
