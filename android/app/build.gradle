@@ -134,6 +134,8 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-webview')
+implementation 'com.facebook.android:facebook-android-sdk:4.34.0'
     implementation project(':react-native-fbsdk')
     implementation project(':react-native-youtube')
     implementation project(':react-native-vector-icons')

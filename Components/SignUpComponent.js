@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { CheckBox } from 'react-native-elements'
-import { View, Image,ScrollView } from 'react-native';
+import { View, Image, ScrollView } from 'react-native';
 import { styles } from './styles'
-import { SocialIcon } from 'react-native-elements'
-import { Button, Text,Input,Item } from 'native-base';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { LoginButton, AccessToken } from 'react-native-fbsdk';
+import { SocialIcon ,Input} from 'react-native-elements'
+import { Button, Text, Item ,Icon} from 'native-base';
+import { LoginButton, AccessToken,LoginManager } from 'react-native-fbsdk';
+import InstagramLogin from 'react-native-instagram-login'
 class SignUp extends Component {
   constructor(props) {
     super(props)
@@ -20,59 +20,70 @@ class SignUp extends Component {
   }
   static navigationOptions = ({ navigation }) => {
     return {
-header:null,
-      headerMode:'none'   ,
-            
+      header: null,
+      headerMode: 'none',
+
     };
   };
+  SignUp = () => {
+  }  
+  Login = () => {
+    let r = this.props.navigation.navigate('Login');
+  }  
+  handleFacebookLogin =()=> {
+    LoginManager.logInWithReadPermissions(['public_profile', 'email']).then(
+      function (result) {
+        if (result.isCancelled) {
+          console.log('Login cancelled')
+        } else {
+          console.log('Login success with permissions: ' + result.grantedPermissions.toString())
+        }
+      },
+      function (error) {
+        console.log('Login fail with error: ' + error)
+      }
+    )
+  }
   render() {
     return (
-      
+<View>
       <ScrollView style={styles.containerWhite} >
-          
-          <Image resizeMode='stretch'
-        source={require('../Assets/Images/SignUpBg.png')} />
-      <Icon name="arrow-left"  size={25}  style={{ position: 'absolute', top: 5, left: 10,color: 'white'  }} 
-        onPress={() =>
-          navigation.navigate('WalkThrough', {})
-        } />
 
+        <Image resizeMode='cover' style={{width: null}}
+          source={require('../Assets/Images/SignUpBg.png')} />
 
-<Item success bordered>
-<Icon name='user' />  
-            <Text onChangeText={value => this.setState({ FullName: value.trim() })}
-             placeholder='Full Name'/>
-            
-          </Item>
+        <Icon type="FontAwesome" name="arrow-left" size={25} style={{ position: 'absolute', top: 5, left: 10, color: 'white' }}
+          onPress={() =>
+            this.props.navigation.navigate('WalkThrough', {})
+          } />
 
-        <Input        
-          error={this.state.emailError}
-          placeholder='Full Name'
-          leftIcon={
-            <Icon
-              name='user'
-              size={24}
-              color='red'
-            />
-          }
-        />
+<Input style={styles.input} onChangeText={value => this.setState({ FullName: value.trim() })}
+            placeholder='Full Name'
+            leftIcon={
+              <Icon type='FontAwesome'
+                name='user'
+                size={12}
+                color='black'
+              />
+            }>
+             </Input>    
 
-        <Input
+        <Input style={styles.input}
           placeholder='Email'
-
           leftIcon={
-            <Icon
+            <Icon type='FontAwesome'
               name='envelope'
               size={24}
               color='red'
             />
           }
+         
         />
 
-        <Input
+        <Input style={styles.input}
           placeholder='Password' secureTextEntry={true}
           leftIcon={
-            <Icon
+            <Icon type='FontAwesome'
               name='lock'
               size={24}
               color='red'
@@ -80,13 +91,13 @@ header:null,
           }
         />
 
-        <Input
+        <Input style={styles.input}
           placeholder='Confirm Password' secureTextEntry={true}
           leftIcon={
-            <Icon
+            <Icon type='FontAwesome'
               name='lock'
               size={24}
-              color='red'
+              iconColor='red'
             />
           }
         />
@@ -100,24 +111,19 @@ header:null,
         />
 
         <Button style={styles.SignUpBotton}
-          onPress={this.Login()} uppercase={false}
+          onPress={this.Login} uppercase={false}
           rounded block>
           <Text uppercase={false}>Sign Up</Text>
         </Button>
 
-        {/* <SocialIcon
-  title='Sign Up'
-  button
-  
-/> */}
+   
+        <SocialIcon
+          button title="Continue With Facebook"
+          onPress={this.handleFacebookLogin}
+          type='facebook'
+        />
 
-        {/* <Button rounded iconLeft block style={{ margin: 10 }}  >
-          <Icon active name="facebook"  color='white' />
-          <Text uppercase={false}>Sign Up With Facebook</Text>
-        </Button>
-       */}
-
-<LoginButton
+        {/* <LoginButton 
           onLoginFinished={
             (error, result) => {
               if (error) {
@@ -133,35 +139,36 @@ header:null,
               }
             }
           }
-          onLogoutFinished={() => console.log("logout.")}/>
-          {/* <SocialIcon
-            title='Sign Up With Facebook'
-            button
-            type='facebook'
-          /> */}
-        {/* <Button rounded iconLeft block style={{ margin: 10 }}  >
-          <Icon active name="instagram"  color='red' />
-          <Text uppercase={false}>Sign Up With instagram</Text>
-        </Button> */}
- 
-        <SocialIcon style={{marginBottom:50}}
+          onLogoutFinished={() => console.log("logout.")} /> */}
+     
+
+        <SocialIcon style={{ marginBottom: 50 }} onPress={()=> this.instagramLogin.show()}
           button title="Sign Up With instagram"
           light
           type='instagram'
         />
-        <Button style={styles.bottom}
-          onPress={this.Login()}
+         <InstagramLogin
+        ref= {ref => this.instagramLogin= ref}
+        clientId='75f1207edf6440778ff1d4309ef39973'
+ 	      redirectUrl='http://glamup.net'
+        scopes={['public_content']}
+        onLoginSuccess={(token) => this.setState({ token })}
+        onLoginFailure={(data) => console.log(data)}
+    />
+       
+      </ScrollView>
+      <Button style={styles.bottom}
+          onPress={() => {
+            
+            this.props.navigation.navigate('Login', {})
+          }}
           buttonStyle={{ backgroundColor: "#D1968F" }}
           containerStyle={{ backgroundColor: "#D1968F" }}
           full dark >
           <Text color='Black' uppercase={false} >If you are a member Login</Text>
         </Button>
-      </ScrollView>      
-    );
-  }
-  SignUp = () => {
-  }
-  Login = () => {
-  }
+    </View>
+    )};
+ 
 }
 export default SignUp;

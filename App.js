@@ -4,9 +4,11 @@ import {
 } from 'react-navigation'
 import WalkThrough from './Components/WalkThroughComponent'
 import SignUp from './Components/SignUpComponent'
+import LoginComponent from './Components/LoginComponent'
 export const routes = {
   WalkThrough: { screen: WalkThrough, title: 'WalkThrough' },
   SignUp:{ screen: SignUp, title: 'SignUp' },
+  Login:{screen : LoginComponent,title:'Login'}
 }
 const RootStack  = createStackNavigator(routes, {
   navigationOptions: ({ navigation }) => {

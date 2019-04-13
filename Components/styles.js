@@ -1,16 +1,21 @@
 import { Platform, StyleSheet, Text, View } from 'react-native';
-const mainThemeColor = '#FFFFFF'
+import{ bordersColor,inputBackground} from '../Services/SettingService'
 const styles = StyleSheet.create({
   input: {
     borderColor: bordersColor, borderWidth: 1,
     borderRadius: 5, minWidth: 100, height: 40,
-    backgroundColor: inputBackground, marginBottom: 15,
-    textAlign: 'center',
+    backgroundColor: inputBackground, margin: 10,
+    textAlign: 'left',
 },
   BottomView: {
     flex: 1,
     justifyContent: 'flex-end',
     marginBottom: 36,
+
+  },
+
+  SocialButton: {    
+   
 
   },
   BottomViewRowFlexDirection: {
@@ -38,7 +43,7 @@ const styles = StyleSheet.create({
 
   },
   containerWhite: {
-    flex: 1,
+    
 
   },
   bottom: {

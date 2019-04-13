@@ -3,6 +3,13 @@ import { Platform, StyleSheet, Text, View, Button, TouchableOpacity } from 'reac
 import YouTube from 'react-native-youtube'
 import { styles } from './styles'
 class WalkThrough extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      header: null,
+      headerMode: 'none',
+
+    };
+  };
   render() {
     return (
       <View style={styles.container}>
@@ -31,6 +38,7 @@ class WalkThrough extends Component {
         </View>
       </View>
     );
+    
   }
   SignUp = () => {
     let r = this.props.navigation.navigate('SignUp');
