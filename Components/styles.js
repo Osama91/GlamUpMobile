@@ -1,7 +1,9 @@
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Dimensions, View } from 'react-native';
 import{ bordersColor,inputBackground} from '../Services/SettingService'
+const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   input: {
+    fontFamily:'Montserrat',
     borderColor: bordersColor, borderWidth: 1,
     borderRadius: 5, minWidth: 100, height: 40,
     backgroundColor: inputBackground, margin: 10,
@@ -26,20 +28,30 @@ const styles = StyleSheet.create({
 
 
   },
-
+  Horizonalcontainer: {  
+    fontFamily:'Montserrat', 
+    margin:10,    
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'stretch',    
+    justifyContent: 'space-around',
+},
   SignUpBotton :{
     backgroundColor: '#D1968F',
     margin:5
   },
   WhiteBotton: {
+    fontFamily:'Montserrat',
+    width:width/2.5,
     color: '#FFFFFF',
     //width: (width * 37) / 100, height: height / 14
     backgroundColor: '#00000000',
     borderWidth: 1,
     padding: 10,
     margin: 10,
-    borderColor: '#FFFFFF'
-
+    borderColor: '#FFFFFF',
+justifyContent:'center',
+borderRadius:10,
 
   },
   containerWhite: {
@@ -53,9 +65,11 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   container: {
+    fontFamily:'Montserrat',
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
     backgroundColor: '#ECA378',
   },
   welcome: {
