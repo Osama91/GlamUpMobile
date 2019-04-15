@@ -5,11 +5,18 @@ import { styles } from './styles'
 class WalkThrough extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      header: null,
+       header: null,
       headerMode: 'none',
 
     };
   };
+ 
+ 
+  ChangeThisTitle = (titleText) => {
+     const {setParams} = this.props.navigation;
+      setParams({ title: titleText })
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -29,8 +36,9 @@ class WalkThrough extends Component {
   /> */}
         <View style={styles.BottomView}   >
           <View style={styles.BottomViewRowFlexDirection}  >
-            <TouchableOpacity style={styles.WhiteBotton} >
+            <TouchableOpacity onPress={this.Profile} style={styles.WhiteBotton} >
               <Text style={{color:'#FFFFFF'}} >Skip</Text>
+              
             </TouchableOpacity>
             <TouchableOpacity onPress={this.SignUp} style={styles.WhiteBotton}  >
               <Text style={{color:'#FFFFFF'}} >Sign Up</Text></TouchableOpacity>
@@ -44,7 +52,11 @@ class WalkThrough extends Component {
     let r = this.props.navigation.navigate('SignUp');
     
   }
+
+  Profile = () => {
+    let r = this.props.navigation.navigate('Profile');
+    
 }
 
-
+}
 export default WalkThrough;

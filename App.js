@@ -5,10 +5,15 @@ import {
 import WalkThrough from './Components/WalkThroughComponent'
 import SignUp from './Components/SignUpComponent'
 import LoginComponent from './Components/LoginComponent'
+import Profile from './Components/Profile';
+import PersonalInformation from './Components/PersonalInformation';
 export const routes = {
   WalkThrough: { screen: WalkThrough, title: 'WalkThrough' },
   SignUp:{ screen: SignUp, title: 'SignUp' },
-  Login:{screen : LoginComponent,title:'Login'}
+  Login:{screen : LoginComponent,title:'Login'},
+  Profile:{screen : Profile,title:'Profile'},
+  PersonalInformation:{screen : PersonalInformation,title:'PersonalInformation'}
+
 }
 const RootStack  = createStackNavigator(routes, {
   navigationOptions: ({ navigation }) => {

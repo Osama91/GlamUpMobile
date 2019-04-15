@@ -75,8 +75,22 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
   },
+   bottomView: {
+    width: '100%',
+    height: 50,
+    backgroundColor: '#EE5407',
+    justifyContent: 'center',
+    alignItems: 'baseline',
+    position: 'absolute',  
+     bottom: 0,  
+   
+},
+ 
 
 
-});
-
+ dropdown: {
+   flex : 1 ,
+   justifyContent: 'flex-start',
+   margin: 10
+ }});
 export { styles }
