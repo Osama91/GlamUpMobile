@@ -6,6 +6,7 @@ import { SocialIcon, Input } from 'react-native-elements'
 import { Button, Text, Item, Icon } from 'native-base';
 import { LoginButton, AccessToken, LoginManager } from 'react-native-fbsdk';
 import InstagramLogin from 'react-native-instagram-login'
+import  AuthService  from '../Services/AuthService';
 class SignUp extends Component {
   constructor(props) {
     super(props)
@@ -136,6 +137,7 @@ class SignUp extends Component {
             onLoginSuccess={(token) => {
               console.log(token);
               this.setState({ token });
+              AuthService.Instagram(token);
               this.props.navigation.navigate('WalkThrough', {})
             }
             }

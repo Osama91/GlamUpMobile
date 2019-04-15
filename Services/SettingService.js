@@ -2,7 +2,7 @@
 export let black = '#000';
 
 //export let logo = require('../images/Logo.png');
-export let baseURL = 'https://www.pixishoes.com';
+export let baseURL = 'http://osamagamal-001-site3.ctempurl.com';
 
 export let splachBackgroundColor = '#4db848';
 export let baseFont = 'MyriadPro';
