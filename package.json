@@ -7,16 +7,19 @@
     "test": "jest"
   },
   "dependencies": {
+    "native-base": "2.12.1",
     "react": "16.8.3",
-    "react-native": "0.59.3",
+    "react-native": "^0.59.4",
     "react-native-elements": "^1.1.0",
+    "react-native-fbsdk": "^0.8.0",
     "react-native-gesture-handler": "^1.1.0",
+    "react-native-instagram-login": "^1.1.1",
+    "react-native-text": "^0.2.0",
     "react-native-vector-icons": "^6.4.2",
     "react-native-youtube": "^1.1.0",
     "react-navigation": "^3.6.1",
-    "native-base": "2.12.1",
-    "react-native-fbsdk": "^0.8.0",
-    "react-native-instagram-login": "^1.1.1"
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "babel-core": "7.0.0-bridge.0",
@@ -29,6 +32,8 @@
     "preset": "react-native"
   },
   "rnpm": {
-    "assets": ["./Assets/fonts/Montserrat"]
+    "assets": [
+      "./Assets/fonts/Montserrat"
+    ]
   }
 }

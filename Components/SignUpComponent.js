@@ -47,7 +47,7 @@ class SignUp extends Component {
   }
   render() {
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <ScrollView style={styles.containerWhite} >
 
           <Image resizeMode='cover' style={{ width: null }}
@@ -146,16 +146,18 @@ class SignUp extends Component {
           />
 
         </ScrollView>
-        <Button style={styles.bottom}
-          onPress={() => {
+        <View style={{ flex: 1,backgroundColor:"yellow",  justifyContent: 'flex-end' }}>
 
-            this.props.navigation.navigate('Login', {})
-          }}
-          buttonStyle={{ backgroundColor: "#D1968F" }}
-          containerStyle={{ backgroundColor: "#D1968F" }}
-          full dark >
-          <Text color='Black' uppercase={false} >If you are a member Login</Text>
-        </Button>
+<Button
+    onPress={() => {
+        this.props.navigation.navigate('Login', {})
+    }}
+    buttonStyle={{ backgroundColor: "#D1968F" }}
+    containerStyle={{ backgroundColor: "#D1968F" }}
+    full dark >
+    <Text  style={{color: 'white'}}  uppercase={false} >If you are a member Login</Text>
+</Button>
+</View>
       </View>
     )
   };
