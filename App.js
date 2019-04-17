@@ -5,20 +5,28 @@ import {
 import WalkThrough from './Components/WalkThroughComponent'
 import SignUp from './Components/SignUpComponent'
 import LoginComponent from './Components/LoginComponent'
+<<<<<<< HEAD
 import Profile from './Components/Profile';
 import PersonalInformation from './Components/PersonalInformation';
 import BodySpecs from './Components/BodySpecs';
 import ThankYou from './Components/ThankYou';
 
+=======
+import Blog from './Components/BlogComponent'
+>>>>>>> b703dc6c759d3c7eb1a33752b1f86d56bf5793b2
 export const routes = {
   WalkThrough: { screen: WalkThrough, title: 'WalkThrough' },
   SignUp:{ screen: SignUp, title: 'SignUp' },
   Login:{screen : LoginComponent,title:'Login'},
+<<<<<<< HEAD
   Profile:{screen : Profile,title:'Profile'},
   BodySpecs:{screen : BodySpecs,title:'BodySpecs'},
   PersonalInformation:{screen : PersonalInformation,title:'PersonalInformation'},
 ThankYou: {screen: ThankYou,title: 'ThankYou'}
 
+=======
+  Blog:{screen : Blog,title:'Blog'}
+>>>>>>> b703dc6c759d3c7eb1a33752b1f86d56bf5793b2
 }
 const RootStack  = createStackNavigator(routes, {
   navigationOptions: ({ navigation }) => {

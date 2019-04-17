@@ -39,7 +39,11 @@ class WalkThrough extends Component {
     style={styles.backgroundVideo}
   /> */}
      <View style={styles.Horizonalcontainer}>
+<<<<<<< HEAD
             <Button  onPress={this.Profile} style={styles.WhiteBotton}><Text style={{ color: '#FFFFFF' }} >SKIP</Text>
+=======
+            <Button onPress={this.Skip}   style={styles.WhiteBotton}><Text style={{ color: '#FFFFFF' }} >SKIP</Text>
+>>>>>>> b703dc6c759d3c7eb1a33752b1f86d56bf5793b2
             </Button>
 
             <Button  onPress={this.SignUp} style={styles.WhiteBotton}  >
@@ -51,7 +55,10 @@ class WalkThrough extends Component {
   }
   SignUp = () => {
     let r = this.props.navigation.navigate('SignUp');
+  }
 
+  Skip = () => {
+    let r = this.props.navigation.navigate('Blog');
   }
 
   Profile = () => {

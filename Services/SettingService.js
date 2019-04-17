@@ -7,7 +7,7 @@ export let baseURL = 'http://osamagamal-001-site3.ctempurl.com';
 export let splachBackgroundColor = '#4db848';
 export let baseFont = 'MyriadPro';
 
-export let barndMainColor = '#4db848';
+export let barndMainColor = '#FDC9C9';
 
 export let inputBackground = 'black';
 

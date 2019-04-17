@@ -1,14 +1,24 @@
 import { Platform, StyleSheet, Dimensions, View } from 'react-native';
-import{ bordersColor,inputBackground} from '../Services/SettingService'
+import { bordersColor, inputBackground, barndMainColor, mainbackgroundColor } from '../Services/SettingService'
 const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   input: {
-    fontFamily:'Montserrat',
+    fontFamily: 'Montserrat',
     borderColor: bordersColor, borderWidth: 1,
     borderRadius: 5, minWidth: 100, height: 40,
     backgroundColor: inputBackground, margin: 10,
     textAlign: 'left',
-},
+  },
+  whiteInput: {
+    fontFamily: 'Montserrat',
+    borderColor: 'white', borderWidth: 1,
+    borderRadius: 5, minWidth: 100, height: 40,
+    margin: 10,
+
+    padding: 10,
+    textAlign: 'left',
+    color: 'white'
+  },
   BottomView: {
     flex: 1,
     justifyContent: 'flex-end',
@@ -16,8 +26,8 @@ const styles = StyleSheet.create({
 
   },
 
-  SocialButton: {    
-   
+  SocialButton: {
+
 
   },
   BottomViewRowFlexDirection: {
@@ -28,21 +38,33 @@ const styles = StyleSheet.create({
 
 
   },
-  Horizonalcontainer: {  
-    fontFamily:'Montserrat', 
-    margin:10,    
+  Horizonalcontainer: {
+    fontFamily: 'Montserrat',
+    margin: 10,
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'stretch',    
+    alignItems: 'stretch',
     justifyContent: 'space-around',
-},
-  SignUpBotton :{
+  },
+  section:{
+    backgroundColor:'white'
+  },
+  icon:{
+     //color:'white',
+    // backgroundColor:'black',      
+
+  },
+  SignUpBotton: {
     backgroundColor: '#D1968F',
-    margin:5
+    margin: 5
+  },
+  SignInBotton: {
+    backgroundColor: 'white',
+    margin: 5
   },
   WhiteBotton: {
-    fontFamily:'Montserrat',
-    width:width/2.5,
+    fontFamily: 'Montserrat',
+    width: width / 2.5,
     color: '#FFFFFF',
     //width: (width * 37) / 100, height: height / 14
     backgroundColor: '#00000000',
@@ -50,10 +72,10 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     borderColor: '#FFFFFF',
-justifyContent:'center',
-borderRadius:10,
-
+    justifyContent: 'center',
+    borderRadius: 10,
   },
+<<<<<<< HEAD
   Icontainer: {
     fontFamily:'Montserrat', 
     margin:10,    
@@ -72,6 +94,15 @@ HrizontaloInputContainer: {
     borderColor: 'grey',
    
     borderRadius: 10 ,
+=======
+  halfwidth: {
+    width: width / 2.5,
+    justifyContent: 'center',
+  },
+
+  containerWhite: {
+
+>>>>>>> b703dc6c759d3c7eb1a33752b1f86d56bf5793b2
 
     backgroundColor : "#FFFFFF"
 },
@@ -94,14 +125,28 @@ HrizontaloInputContainer: {
     flex: 1,
     width: '100%',
   },
+  MainContainer: {
+    fontFamily: 'Montserrat',
+    backgroundColor: barndMainColor,
+    flex: 1
+
+  },
+  FullSize: {
+    // height:'20%',
+    // width: '100%',
+    backgroundColor: 'blue',
+    textAlignVertical: "center",
+    textAlign: "center",
+  },
   container: {
-    fontFamily:'Montserrat',
+    fontFamily: 'Montserrat',
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
     backgroundColor: '#ECA378',
   },
+
   welcome: {
     fontSize: 20,
     textAlign: 'center',
@@ -140,9 +185,39 @@ Image : {
  borderColor: '#D1968F',
 },
 
+<<<<<<< HEAD
  dropdown: {
    flex : 1 ,
    justifyContent: 'flex-start',
    margin: 10
  }});
+=======
+  header: {
+    padding:5,
+    paddingBottom: 2,
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: '#000',
+  },
+  momentTitle: {
+    padding:0,
+    paddingLeft: 5,
+  },
+  card: {
+    marginVertical: 8,
+  },
+  footer: {
+    paddingTop: 16,
+  },
+  time: {
+    marginTop: 5,
+  },
+  // BlogContainer: {          
+  //       paddingHorizontal: 14,
+  //       paddingVertical: 8,
+  //       alignItems:'center'
+  //     },
+});
+
+>>>>>>> b703dc6c759d3c7eb1a33752b1f86d56bf5793b2
 export { styles }
