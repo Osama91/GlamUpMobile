@@ -54,10 +54,40 @@ justifyContent:'center',
 borderRadius:10,
 
   },
-  containerWhite: {
-    
+  Icontainer: {
+    fontFamily:'Montserrat', 
+    margin:10,    
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'stretch',    
+    justifyContent: 'space-around',
+},
+HrizontaloInputContainer: {
+   textAlign: 'center',
+   width:width/2.5,
+   height: 50,
+   
+    borderWidth: 1,
+   
+    borderColor: 'grey',
+   
+    borderRadius: 10 ,
 
-  },
+    backgroundColor : "#FFFFFF"
+},
+ InputContainer: {
+   textAlign: 'left',
+    height: 50,
+   
+    borderWidth: 1,
+  
+    borderColor: 'grey',
+   
+    borderRadius: 10 ,
+
+   //Set background color of Text Input.
+   backgroundColor : "#FFFFFF"
+},
   bottom: {
     position: 'absolute',
     bottom: 0,
@@ -99,8 +129,16 @@ borderRadius:10,
      bottom: 0,  
    
 },
- 
-
+ImageContainer: {
+   
+  justifyContent: 'center',
+  alignItems: 'center',
+ },
+Image : {
+   borderWidth: 1,
+  // Set border color.
+ borderColor: '#D1968F',
+},
 
  dropdown: {
    flex : 1 ,

@@ -7,12 +7,17 @@ import SignUp from './Components/SignUpComponent'
 import LoginComponent from './Components/LoginComponent'
 import Profile from './Components/Profile';
 import PersonalInformation from './Components/PersonalInformation';
+import BodySpecs from './Components/BodySpecs';
+import ThankYou from './Components/ThankYou';
+
 export const routes = {
   WalkThrough: { screen: WalkThrough, title: 'WalkThrough' },
   SignUp:{ screen: SignUp, title: 'SignUp' },
   Login:{screen : LoginComponent,title:'Login'},
   Profile:{screen : Profile,title:'Profile'},
-  PersonalInformation:{screen : PersonalInformation,title:'PersonalInformation'}
+  BodySpecs:{screen : BodySpecs,title:'BodySpecs'},
+  PersonalInformation:{screen : PersonalInformation,title:'PersonalInformation'},
+ThankYou: {screen: ThankYou,title: 'ThankYou'}
 
 }
 const RootStack  = createStackNavigator(routes, {

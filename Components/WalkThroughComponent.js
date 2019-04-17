@@ -38,28 +38,14 @@ class WalkThrough extends Component {
     onError={e => this.setState({ error: e.error })} 
     style={styles.backgroundVideo}
   /> */}
-<<<<<<< HEAD
-        <View style={styles.BottomView}   >
-          <View style={styles.BottomViewRowFlexDirection}  >
-            <TouchableOpacity onPress={this.Profile} style={styles.WhiteBotton} >
-              <Text style={{color:'#FFFFFF'}} >Skip</Text>
-              
-            </TouchableOpacity>
-            <TouchableOpacity onPress={this.SignUp} style={styles.WhiteBotton}  >
-              <Text style={{color:'#FFFFFF'}} >Sign Up</Text></TouchableOpacity>
-          </View>
-        </View>
-      </View>
-=======
      <View style={styles.Horizonalcontainer}>
-            <Button   style={styles.WhiteBotton}><Text style={{ color: '#FFFFFF' }} >SKIP</Text>
+            <Button  onPress={this.Profile} style={styles.WhiteBotton}><Text style={{ color: '#FFFFFF' }} >SKIP</Text>
             </Button>
 
             <Button  onPress={this.SignUp} style={styles.WhiteBotton}  >
               <Text style={{ color: '#FFFFFF' }} >SIGN UP</Text></Button>
               </View>
           </View>       
->>>>>>> 987a8af3ef74353e554a9ca8e061ca2ffccb2b1d
     );
 
   }

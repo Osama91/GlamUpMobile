@@ -1,31 +1,23 @@
 import React, { Component } from 'react';
-import { CheckBox } from 'react-native-elements'
-import { View, Image, ScrollView,Alert,Picker,StyleSheet } from 'react-native';
+import { Header } from 'react-native-elements'
+import { View, Image, ScrollView,Alert,Picker,StyleSheet,TextInput } from 'react-native';
 import { styles } from './styles'
-import { SocialIcon ,Input  } from 'react-native-elements'
-import { Button, Text, Item ,Icon, Form, Content} from 'native-base';
-import { LoginButton, AccessToken,LoginManager } from 'react-native-fbsdk';
-import InstagramLogin from 'react-native-instagram-login'
+import { SocialIcon     } from 'react-native-elements'
+import { Button, Text ,Icon } from 'native-base';
+ import InstagramLogin from 'react-native-instagram-login'
 import RNPickerSelect from 'react-native-picker-select';
+import MultiSelect from 'react-native-multiple-select';
 
 
 const sports = [
     {
-      label: 'Football',
-      value: 'football',
+      label: 'Married',
+      value: 'Married',
     },
     {
-      label: 'Baseball',
-      value: 'baseball',
-    },
-    {
-        label: 'Hockey',
-        value: 'hockey',
-      },
-      {
-        label: 'Hockey2',
-        value: 'hockey2',
-      },
+      label: 'Single',
+      value: 'Single',
+    }  
   ];
   const KidsCount = [
     {
@@ -39,12 +31,64 @@ const sports = [
     {
         label: '2',
         value: '2',
-      },
-      {
-        label: '3',
-        value: '3',
-      },
+      } 
   ];
+
+  const Profession = [
+    {
+      label: 'Profession',
+      value: 'Profession',
+    },
+    {
+      label: 'Profession1',
+      value: 'Profession1',
+    }  
+  ];
+
+  const FavouritBrands = [
+    {
+      label: 'Brand1',
+      value: 'Brand1',
+    },
+    {
+      label: 'Brand2',
+      value: 'Brand2',
+    }  
+  ];
+
+  const SkinColor = [
+    {
+      label: 'White',
+      value: 'White',
+    },
+    {
+      label: 'Black',
+      value: 'Black',
+    }  
+  ];
+  const PreferredStyle = [
+    {
+      label: 'Classic',
+      value: 'Classic',
+    },
+    {
+      label: 'Cajsual',
+      value: 'Cajsual',
+    }  
+
+];
+const Colors = [
+  {
+    label: 'Red',
+    value: 'Red',
+  },
+  {
+    label: 'Blue',
+    value: 'Blue',
+  }  
+
+];
+
 class PersonalInformation extends Component {
     
     static navigationOptions = ({ navigation }) => {
@@ -68,13 +112,19 @@ class PersonalInformation extends Component {
         this.state = {
           
           SelectedItemValue: undefined,
-          HaveKidsSelectedValue: undefined
+          HaveKidsSelectedValue: undefined,
+          ProfessionSelectedValue: undefined,
+          FavouritBrandsSelectedValue: undefined,
+          SkinColorSelectedValue: undefined,
+          PreferredStyleSelectedValue: undefined,
+          ColorsSelectedValue:undefined
+ 
         };
       }
 
   render() {
     const placeholder = {
-        label: 'Select a sport...',
+        label: 'Martial Status',
         value: null,
         color: '#9EA0A4',
       };
@@ -83,8 +133,37 @@ class PersonalInformation extends Component {
         value: null,
         color: '#9EA0A4',
       };
+      const ProfessionPlaceHolder = {
+        label: 'Profession',
+        value: null,
+        color: '#9EA0A4',
+      };
+      const FavouritBrandsPlaceHolder = {
+        label: 'Favourit Brands',
+        value: null,
+        color: '#9EA0A4',
+      };
+      const SkinColorPlaceHolder = {
+        label: 'Skin Color',
+        value: null,
+        color: '#9EA0A4',
+      };
+      const PreferredStylePlaceHolder = {
+        label: 'Preffered Style',
+        value: null,
+        color: '#9EA0A4',
+      };
+      const ColorsPlaceHolder = {
+        label: 'Preffered Color',
+        value: null,
+        color: '#9EA0A4',
+      };
     return (
+
+
     <View style = {styles.dropdown}> 
+
+    <ScrollView> 
  
      
     <RNPickerSelect
@@ -129,24 +208,146 @@ class PersonalInformation extends Component {
     this.inputRefs.HaveKidsSelectedValue = el;
   }}
 />
+ <View paddingVertical={10} />
+
+<View    style={styles.Icontainer} >
+
+    <TextInput   style={styles.HrizontaloInputContainer}
+        placeholder='Governorat'/>
+
+ 
+        <TextInput   style={styles.HrizontaloInputContainer}
+        placeholder='District'/>
+</View>
+ 
 <View paddingVertical={10} />
 
-<View   style={styles.container}>
-<Input
-        placeholder='Governorate' />
-</View>
-        <Button  uppercase={false}
-            onPress={() => {
+<RNPickerSelect
+    mode="dropdown"  
+    placeholder={ProfessionPlaceHolder}
+
+    items={Profession}
+    onValueChange={value => {
+      this.setState({
+        ProfessionSelectedValue: value,
+
+        
+      });
+    }}
+     style={pickerSelectStyles}
+    value={this.state.ProfessionSelectedValue}
+    useNativeAndroidPickerStyle={false}
+    ref={el => {
+      this.inputRefs.ProfessionSelectedValue = el;
+    }}
+    
+  />
+
+  <View paddingVertical={10} />
+
+  <TextInput   style={styles.InputContainer}
+  placeholder='Favourit Brands'
+  placeholderStyle={textAlign='center'}
+  />
+
+  <View paddingVertical={10} />
+
+  <RNPickerSelect
+      mode="dropdown"  
+      placeholder={SkinColorPlaceHolder}
+  
+      items={SkinColor}
+      onValueChange={value => {
+        this.setState({
+          SkinColorSelectedValue: value,
+  
           
-             this.props.navigation.navigate('Login', {})
+        });
+      }}
+       style={pickerSelectStyles}
+      value={this.state.SkinColorSelectedValue}
+      useNativeAndroidPickerStyle={false}
+      ref={el => {
+        this.inputRefs.SkinColorSelectedValue = el;
+      }}
+      
+    />
+    <View paddingVertical={10} />
+
+  <RNPickerSelect
+      mode="dropdown"  
+      placeholder={PreferredStylePlaceHolder}
+  
+      items={PreferredStyle}
+      onValueChange={value => {
+        this.setState({
+          PreferredStyleSelectedValue: value,
+  
+          
+        });
+      }}
+       style={pickerSelectStyles}
+      value={this.state.PreferredStyleSelectedValue}
+      useNativeAndroidPickerStyle={false}
+      ref={el => {
+        this.inputRefs.PreferredStyleSelectedValue = el;
+      }}
+      
+    />
+    
+    <View paddingVertical={10} />
+
+    <RNPickerSelect
+        mode="dropdown"  
+        placeholder={ColorsPlaceHolder}
+    
+        items={Colors}
+        onValueChange={value => {
+          this.setState({
+            ColorsSelectedValue: value,
+    
+            
+          });
+        }}
+         style={pickerSelectStyles}
+        value={this.state.ColorsSelectedValue}
+        useNativeAndroidPickerStyle={false}
+        ref={el => {
+          this.inputRefs.ColorsSelectedValue = el;
+        }}
+        
+      />
+
+      <View paddingVertical={10} />
+
+        <Button  uppercase={false}
+        
+        onPress={() => {
+          
+          this.props.navigation.navigate('SingUp', {})
         }} 
-         full dark >
-         <Text color='Black'   >Confirm</Text>
+                 full dark >
+            
+            <Text color='Black'   >Confirm</Text>
+            <Icon name="md-arrow-forward" size={16} color="#000"  />
+
         </Button>
+         </ScrollView>
+
        </View> 
      )};
-    }
     
+    
+
+
+
+     BodySpecs = () => {
+        let r = this.props.navigation.navigate('SignUp');
+
+        console.log('BodySpecs', 'doneneoneondondondondondondondodn')
+        
+    }
+}
     export default PersonalInformation;
     
 const pickerSelectStyles = StyleSheet.create({

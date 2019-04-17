@@ -30,8 +30,7 @@ class Profile extends Component {
         <Input style={styles.input}
         placeholder='Phone Number'  
         keyboardType='numeric'/> 
-        <View paddingVertical={10} />
-
+ 
         <View paddingVertical={10} />
 
         <Input style={styles.input}
@@ -70,10 +69,10 @@ class Profile extends Component {
         <Button  uppercase={false}
         onPress={() => {
           
-          this.props.navigation.navigate('Login', {})
+          this.props.navigation.navigate('BodySpecs', {})
         }} 
         full dark >
-        <Text color='Black'   >Body Specs</Text>
+        <Text color='Black' >Body Specs</Text>
       </Button>
     </View>
     )};
