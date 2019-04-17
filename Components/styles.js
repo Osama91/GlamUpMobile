@@ -47,12 +47,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   section:{
-    backgroundColor:'white'
+    //backgroundColor:'white'
   },
-  icon:{
-     //color:'white',
-    // backgroundColor:'black',      
-
+  icon:{  
+     color:'black',
+     backgroundColor:'white',      
   },
   SignUpBotton: {
     backgroundColor: '#D1968F',

@@ -51,7 +51,13 @@ class SocialBar extends Component {
     const shares = this.state.shares + (this.props.showLabel ? ' Shares' : '');
 
     return (
+      
       <View style={styles.Horizonalcontainer}>
+      <Icon type='FontAwesome' 
+              name='comment'
+              size={12}
+              style={styles.icon}
+              expandedIconStyle={{ color: "red" }}/>
         <View style={styles.section}>
           <Button transparent onPress={this.onLikeButtonPressed}>
             {/* <Text  style={styles.icon}>{FontAwesome.heart}</Text> */}
@@ -67,15 +73,14 @@ class SocialBar extends Component {
           </Button>
         </View>
         <View style={styles.section}>
-          {/* <Button transparent onPress={this.onCommentButtonPressed}> */}
-          <Text style={{color:'black'}} color='black' >{FontAwesome.user}</Text>
-            <Icon type='FontAwesome'
+          <Button iconLeft light  onPress={this.onCommentButtonPressed}>
+            <Icon type='FontAwesome' 
               name='comment'
               size={12}
               style={styles.icon}
               expandedIconStyle={{ color: "red" }}/>
             <Text style={styles.label}>{comments}</Text>
-          {/* </Button> */}
+          </Button>
         </View>
         <View style={styles.section}>
           <Button transparent onPress={this.onShareButtonPressed}>
