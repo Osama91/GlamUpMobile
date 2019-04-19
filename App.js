@@ -1,32 +1,33 @@
 import {
   createStackNavigator,
-  createAppContainer
+  createAppContainer,
+  createDrawerNavigator
 } from 'react-navigation'
 import WalkThrough from './Components/WalkThroughComponent'
 import SignUp from './Components/SignUpComponent'
 import LoginComponent from './Components/LoginComponent'
-<<<<<<< HEAD
+import Blog from './Components/BlogComponent'
 import Profile from './Components/Profile';
 import PersonalInformation from './Components/PersonalInformation';
-import BodySpecs from './Components/BodySpecs';
 import ThankYou from './Components/ThankYou';
+import BodySpecs from './Components/BodySpecs';
+  import ForgetPassword from './Components/ForgetPassword';
 
-=======
-import Blog from './Components/BlogComponent'
->>>>>>> b703dc6c759d3c7eb1a33752b1f86d56bf5793b2
+
+
+
 export const routes = {
   WalkThrough: { screen: WalkThrough, title: 'WalkThrough' },
   SignUp:{ screen: SignUp, title: 'SignUp' },
   Login:{screen : LoginComponent,title:'Login'},
-<<<<<<< HEAD
-  Profile:{screen : Profile,title:'Profile'},
-  BodySpecs:{screen : BodySpecs,title:'BodySpecs'},
+  Blog:{screen : Blog,title:'Blog'},
+   Profile:{screen : Profile,title:'Profile'},
   PersonalInformation:{screen : PersonalInformation,title:'PersonalInformation'},
-ThankYou: {screen: ThankYou,title: 'ThankYou'}
+  ThankYou:{screen : ThankYou,title:'ThankYou'},
+  BodySpecs:{screen : BodySpecs,title:'BodySpecs'},
 
-=======
-  Blog:{screen : Blog,title:'Blog'}
->>>>>>> b703dc6c759d3c7eb1a33752b1f86d56bf5793b2
+  ForgetPassword:{screen : ForgetPassword,title:'ForgetPassword'},
+
 }
 const RootStack  = createStackNavigator(routes, {
   navigationOptions: ({ navigation }) => {

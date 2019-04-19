@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     marginBottom: 36,
 
-  },
+  }, 
 
   SocialButton: {
 
@@ -75,15 +75,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 10,
   },
-<<<<<<< HEAD
-  Icontainer: {
-    fontFamily:'Montserrat', 
-    margin:10,    
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'stretch',    
-    justifyContent: 'space-around',
+  halfwidth: {
+    width: width / 2.5,
+    justifyContent: 'center',
+  },
+
+  containerWhite: {
+
+
+    backgroundColor : "#FFFFFF"
 },
+Icontainer: {
+  fontFamily:'Montserrat', 
+  margin:10,    
+  flex: 1,
+  flexDirection: 'row',
+  alignItems: 'stretch',    
+  justifyContent: 'space-around',
+},
+ 
 HrizontaloInputContainer: {
    textAlign: 'center',
    width:width/2.5,
@@ -94,30 +104,21 @@ HrizontaloInputContainer: {
     borderColor: 'grey',
    
     borderRadius: 10 ,
-=======
-  halfwidth: {
-    width: width / 2.5,
-    justifyContent: 'center',
-  },
-
-  containerWhite: {
-
->>>>>>> b703dc6c759d3c7eb1a33752b1f86d56bf5793b2
 
     backgroundColor : "#FFFFFF"
 },
- InputContainer: {
-   textAlign: 'left',
-    height: 50,
-   
-    borderWidth: 1,
+InputContainer: {
+  textAlign: 'left',
+   height: 50,
   
-    borderColor: 'grey',
-   
-    borderRadius: 10 ,
+   borderWidth: 1,
+ 
+   borderColor: 'grey',
+  
+   borderRadius: 10 ,
 
-   //Set background color of Text Input.
-   backgroundColor : "#FFFFFF"
+  //Set background color of Text Input.
+  backgroundColor : "#FFFFFF"
 },
   bottom: {
     position: 'absolute',
@@ -147,6 +148,12 @@ HrizontaloInputContainer: {
     backgroundColor: '#ECA378',
   },
 
+  containerFull: {
+    fontFamily: 'Montserrat',
+    flex: 1,
+    backgroundColor: barndMainColor,
+
+  },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
@@ -185,13 +192,6 @@ Image : {
  borderColor: '#D1968F',
 },
 
-<<<<<<< HEAD
- dropdown: {
-   flex : 1 ,
-   justifyContent: 'flex-start',
-   margin: 10
- }});
-=======
   header: {
     padding:5,
     paddingBottom: 2,
@@ -219,5 +219,4 @@ Image : {
   //     },
 });
 
->>>>>>> b703dc6c759d3c7eb1a33752b1f86d56bf5793b2
 export { styles }

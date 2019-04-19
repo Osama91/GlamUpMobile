@@ -119,12 +119,12 @@ class BodySpecs extends Component {
     </View>
 
 
-    
+    <View style={{justifyContent:'flex-end', flex:1}}>
         <Button  uppercase={false}
-        
+        style={{flex:1  }}
         onPress={() => {
           
-          this.props.navigation.navigate('ThankYou', {})
+          this.props.navigation.navigate('ForgetPassword', {})
         }} 
 
                  full dark >
@@ -134,7 +134,7 @@ class BodySpecs extends Component {
 
         </Button>
 
-        
+        </View>
         </ScrollView>
   </View>
         );

@@ -1,44 +1,53 @@
 import React, { Component } from 'react';
 import { CheckBox } from 'react-native-elements'
-import { View, Image, ScrollView } from 'react-native';
+import { View, Image, ScrollView ,TextInput} from 'react-native';
 import { styles } from './styles'
-import { SocialIcon ,Input  } from 'react-native-elements'
-import { Button, Text, Item ,Icon} from 'native-base';
+ import { Button, Text, Item ,Icon      ,    Left, Right, 
+  Body,Container, Header, Title,       Content  , Card, CardItem} from 'native-base';
 import { LoginButton, AccessToken,LoginManager } from 'react-native-fbsdk';
 import InstagramLogin from 'react-native-instagram-login'
-
+import CustomHeader from './CustomHeader';
+ 
 class Profile extends Component {
+  constructor(props) {
+    super(props)
+
     
-    static navigationOptions = ({ navigation }) => {
-        return {
-           title: "Profile",
-     
-        };
-      };
+  }
+  static navigationOptions = ({ navigation }) => {
+    return {
+       title: "Profile",
+        position: 'center'
+    };
+  };
+   
+ 
    
   render() {
     return (
-<View   >
-         <Input style={styles.input}
+<View     >
+ 
+ 
+         <TextInput style={styles.InputContainer}
           placeholder='Username'  />
           <View paddingVertical={10} />
 
-        <Input style={styles.input}
+        <TextInput style={styles.InputContainer}
           placeholder='Full Name' />
           <View paddingVertical={10} />
 
-        <Input style={styles.input}
+        <TextInput style={styles.InputContainer}
         placeholder='Phone Number'  
         keyboardType='numeric'/> 
  
         <View paddingVertical={10} />
 
-        <Input style={styles.input}
+        <TextInput style={styles.InputContainer}
         placeholder='Email' />
 
         <View paddingVertical={10} />
 
-        <Input style={styles.input}
+        <TextInput style={styles.InputContainer}
         placeholder='Country' /> 
  
         <View paddingVertical={10} />
@@ -54,7 +63,7 @@ class Profile extends Component {
       </Button>
       <View paddingVertical={10} />
 
-       <Button  uppercase={false}
+              <Button  uppercase={false}
         rightIcon={{name: 'arrow'}}
         onPress={() => {
           
@@ -63,8 +72,7 @@ class Profile extends Component {
         full dark >
         <Text color='Black'    >Personal Information</Text>
       </Button>
-
-      <View paddingVertical={10} />
+       <View paddingVertical={10} />
 
         <Button  uppercase={false}
         onPress={() => {
