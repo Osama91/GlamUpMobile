@@ -85,7 +85,7 @@ static ODATA_Store_URL= Constant.URL_ODATA_SERVER + "/Store";
     static MediaBaseUrl = Constant.BASE_URL;
     static ItemImage = Constant.MediaBaseUrl;//Constant.BASE_URL + "/assets/Uploads/";
     //static ShippingMethodImage = Constant.BASE_URL + "/assets/Uploads/ShippingMethod";
-
+    static TOKEN = "Token";
     //#region LOYALTY
     static width = Dimensions.get('window').width;
     static height = Dimensions.get('window').height;

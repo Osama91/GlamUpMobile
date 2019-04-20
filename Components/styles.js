@@ -9,6 +9,11 @@ const styles = StyleSheet.create({
     backgroundColor: inputBackground, margin: 10,
     textAlign: 'left',
   },
+  label:{    
+    textAlign:'left',    
+    padding:0,
+    margin:0,
+  },
   whiteInput: {
     fontFamily: 'Montserrat',
     borderColor: 'white', borderWidth: 1,
@@ -50,9 +55,15 @@ const styles = StyleSheet.create({
     //backgroundColor:'white'
   },
   icon:{  
-     color:'black',
-     backgroundColor:'white',      
+      color:'black',           
+    //  borderWidth:1,
+    //  borderColor:'black'
   },
+  iconPressed:{  
+    color:'red',           
+  //  borderWidth:1,
+  //  borderColor:'black'
+},
   SignUpBotton: {
     backgroundColor: '#D1968F',
     margin: 5
@@ -140,8 +151,7 @@ const styles = StyleSheet.create({
     padding:0,
     paddingLeft: 5,
   },
-  card: {
-    marginVertical: 8,
+  card: {    
   },
   footer: {
     paddingTop: 16,

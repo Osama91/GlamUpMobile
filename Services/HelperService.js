@@ -1,7 +1,7 @@
 //import TabsBar from '../components/TabsBar';
 import DeviceService from './DeviceService';
 import Constant from '../Services/Constant';
-
+import {  Toast } from "native-base";
 export default class HelperService {
     static async handleErrors(response) {
         if (response.status == 401) {// login
@@ -17,6 +17,22 @@ export default class HelperService {
         return response;
     }
     static handleErrorsUI(ex) {
-        alert(ex);
+        Toast.show({
+            text: ex.message,
+            buttonText: "Okay",
+            position: "top",
+            type: "danger"
+          })
+       
+    }
+
+    static handleErrorsUIString(ex) {
+        Toast.show({
+            text: ex,
+            buttonText: "Okay",
+            position: "top",
+            type: "danger"
+          })
+       
     }
 }
