@@ -29,11 +29,18 @@ class WalkThrough extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
-      header: null,
+       header: null,
       headerMode: 'none',
 
     };
   };
+ 
+ 
+  ChangeThisTitle = (titleText) => {
+     const {setParams} = this.props.navigation;
+      setParams({ title: titleText })
+  }
+
   render() {
 
     if (!this.state.loaded) {
@@ -71,10 +78,12 @@ class WalkThrough extends Component {
     let r = this.props.navigation.navigate('SignUp');
   }
 
-  Skip = () => {
-    let r = this.props.navigation.navigate('Blog');
-  }
+   
+
+  Profile = () => {
+    let r = this.props.navigation.navigate('Profile');
+    
 }
 
-
+}
 export default WalkThrough;

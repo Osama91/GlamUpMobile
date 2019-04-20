@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     marginBottom: 36,
 
-  },
+  }, 
 
   SocialButton: {
 
@@ -93,7 +93,43 @@ const styles = StyleSheet.create({
   containerWhite: {
 
 
-  },
+    backgroundColor : "#FFFFFF"
+},
+Icontainer: {
+  fontFamily:'Montserrat', 
+  margin:10,    
+  flex: 1,
+  flexDirection: 'row',
+  alignItems: 'stretch',    
+  justifyContent: 'space-around',
+},
+ 
+HrizontaloInputContainer: {
+   textAlign: 'center',
+   width:width/2.5,
+   height: 50,
+   
+    borderWidth: 1,
+   
+    borderColor: 'grey',
+   
+    borderRadius: 10 ,
+
+    backgroundColor : "#FFFFFF"
+},
+InputContainer: {
+  textAlign: 'left',
+   height: 50,
+  
+   borderWidth: 1,
+ 
+   borderColor: 'grey',
+  
+   borderRadius: 10 ,
+
+  //Set background color of Text Input.
+  backgroundColor : "#FFFFFF"
+},
   bottom: {
     position: 'absolute',
     bottom: 0,
@@ -122,6 +158,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#ECA378',
   },
 
+  containerFull: {
+    fontFamily: 'Montserrat',
+    flex: 1,
+    backgroundColor: barndMainColor,
+
+  },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
@@ -139,6 +181,26 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
   },
+   bottomView: {
+    width: '100%',
+    height: 50,
+    backgroundColor: '#EE5407',
+    justifyContent: 'center',
+    alignItems: 'baseline',
+    position: 'absolute',  
+     bottom: 0,  
+   
+},
+ImageContainer: {
+   
+  justifyContent: 'center',
+  alignItems: 'center',
+ },
+Image : {
+   borderWidth: 1,
+  // Set border color.
+ borderColor: '#D1968F',
+},
 
   header: {
     padding:5,
