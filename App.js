@@ -14,9 +14,9 @@ import DrawerNav from './Components/Navigators/DrawerNav';
 
 export const routes = {
   WalkThrough: { screen: WalkThrough, title: 'WalkThrough' },
-  SignUp:{ screen: SignUp, title: 'SignUp' 
-   },
+  SignUp:{ screen: SignUp, title: 'SignUp' },
   DrawerNav:{screen: DrawerNav,title: 'DrawerNav',
+  
 navigationOptions: {
   header: null,
   headerMode:'none'
