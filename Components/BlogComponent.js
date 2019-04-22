@@ -45,7 +45,7 @@ class Blog extends React.Component {
           style={{            
             height: 400            
           }}
-          source={{ uri: (Constant.BlogImages + item.PictureUrl) }} ref={item.ID}
+          source={{ uri: (Constant.BlogImages + this.state.data.PictureUrl) }} ref={this.state.data.ID}
           />
           <View >
             <View>

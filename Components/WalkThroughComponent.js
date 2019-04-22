@@ -8,22 +8,10 @@ import { styles } from './styles'
 import AuthService from '../Services/AuthService';
 import DeviceService from '../Services/DeviceService'
 import Constant from '../Services/Constant';
-import Home from './HomeComponent';
+import StackNav from './Navigators/StackNav';
 class WalkThrough extends Component {
   constructor(props) {
-    super(props)
-    this.state = {
-      loaded: false
-    };
-
-    DeviceService.GetData(Constant.TOKEN).then((r) => {
-      if (r !== null) {
-        AuthService.authData = JSON.parse(r);
-      
-      }
-      this.setState({ loaded: true });
-      //navigation.navigate('Main', {});
-    });
+    super(props)  
   }
 
   static navigationOptions = ({ navigation }) => {
@@ -41,11 +29,6 @@ class WalkThrough extends Component {
   }
 
   render() {
-
-    if (!this.state.loaded) {
-      return null;
-    }
-    if (AuthService.loggedIn()) { return <Home></Home> }
 
     return (
       <View style={styles.container}>

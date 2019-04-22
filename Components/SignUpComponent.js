@@ -3,11 +3,19 @@ import { CheckBox } from 'react-native-elements'
 import { View, Image, ScrollView } from 'react-native';
 import { styles } from './styles'
 import { SocialIcon, Input } from 'react-native-elements'
+import { scaleText } from 'react-native-text';
+import { barndMainColor } from '../Services/SettingService'
 import { Button, Text, Icon } from 'native-base';
+
 import { LoginManager } from 'react-native-fbsdk';
 import InstagramLogin from 'react-native-instagram-login'
 import AuthService from '../Services/AuthService';
 import HelperService from '../Services/HelperService'
+const style = scaleText({
+  deviceBaseWidth: 360,
+  fontSize: 75,
+
+});
 class SignUp extends Component {
   constructor(props) {
     super(props)
@@ -16,24 +24,31 @@ class SignUp extends Component {
       UserName: '',
       UserNameError: '',
       Password: '',
-      ConfirmPassword:'',
-      Email:'',
+      ConfirmPassword: '',
+      Email: '',
       passwordError: '',
       checked: false
     }
-   
-  }
-  componentWillMount(){
-    if (AuthService.loggedIn()) {
-      this.props.navigation.navigate('Home', {});
-      return;
-    } 
 
   }
   static navigationOptions = () => {
+        
     return {
-      header: null,
-      headerMode: 'none',
+        
+        headerStyle: {
+            backgroundColor: barndMainColor,                
+            shadowColor: 'transparent',
+            shadowRadius: 0,
+            shadowOffset: {
+                height: 0,
+            },
+            elevation:0,
+            headerTintColor:'white' 
+        }   ,
+        headerTintColor:'white',   
+        shadowColor: 'transparent' ,
+        elevation:0,     
+                
 
     };
   };
@@ -50,7 +65,7 @@ class SignUp extends Component {
       return;
     }
     this.setState({ loading: true, }, () => {
-      AuthService.SignUP(this.state.UserName,this.state.Email, this.state.Password)
+      AuthService.SignUP(this.state.UserName, this.state.Email, this.state.Password)
         .then(() => {
           AuthService.Login(this.state.UserName, this.state.Password)
             .then(() => {
@@ -86,15 +101,17 @@ class SignUp extends Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
+          <Text style={{ fontSize: style.fontSize, color: 'white',backgroundColor: barndMainColor, }}
+                > GLAM UP  </Text>
         <ScrollView style={styles.containerWhite} >
 
-          <Image resizeMode='cover' style={{ width: null }}
+          {/* <Image resizeMode='cover' style={{ width: null }}
             source={require('../Assets/Images/SignUpBg.png')} />
 
           <Icon type="FontAwesome" name="arrow-left" size={25} style={{ position: 'absolute', top: 5, left: 10, color: 'white' }}
             onPress={() =>
               this.props.navigation.navigate('WalkThrough', {})
-            } />
+            } /> */}
           <Input style={styles.input} onChangeText={value => this.setState({ UserName: value.trim() })}
             placeholder='User Name'
             leftIcon={

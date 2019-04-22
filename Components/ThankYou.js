@@ -35,10 +35,10 @@ class ThankYou extends Component {
           <Text style={{ fontSize: style.fontSize, color: 'black' }}> Thank You! </Text>
           <View paddingVertical={10} />
 
-          <Text style={{ color: 'black' }}> Your account has been created. </Text>
-          <View paddingVertical={10} />
+          <Text style={{fontSize:20 ,color: 'black' }}> Your account has been created. </Text>
+          <View paddingVertical={5} />
 
-          <Text style={{ color: 'black' }}>  Have a nice day! </Text>
+          <Text style={{ fontSize:20 ,color: 'black' }}>  Have a nice day! </Text>
           <View paddingVertical={10} />
 
 

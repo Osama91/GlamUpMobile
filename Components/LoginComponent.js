@@ -33,13 +33,7 @@ class Login extends Component {
             checked: false
         }   
          
-    }  
-    componentWillMount(){
-        if (AuthService.loggedIn()) {
-            this.props.navigation.navigate('Home', {});
-            return;
-          }   
-    }
+    }    
     // static navigationOptions = ({ navigation }) => {
     //     return {
     //         headerStyle: {

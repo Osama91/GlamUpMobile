@@ -1,30 +1,28 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import { Root } from "native-base";
 import {
   createStackNavigator,
-  createAppContainer,
-  createDrawerNavigator
-} from 'react-navigation'
+  createAppContainer} from 'react-navigation'
+  import Intial from './Components/Intial'
 import WalkThrough from './Components/WalkThroughComponent'
 import SignUp from './Components/SignUpComponent'
-import LoginComponent from './Components/LoginComponent'
+import Login from './Components/LoginComponent'
+import ThankYou from './Components/ThankYou'
+
 import DrawerNav from './Components/Navigators/DrawerNav';
-import Blog from './Components/BlogComponent'
-import Home from './Components/HomeComponent'
-import Article from './Components/ArticleComponent'
-import Profile from './Components/Profile';
-import PersonalInformation from './Components/PersonalInformation';
-import ThankYou from './Components/ThankYou';
-import BodySpecs from './Components/BodySpecs';
-  import ForgetPassword from './Components/ForgetPassword';
 
 
 
 
 export const routes = {
+  Intial: { screen: Intial, title: 'Intial' },
   WalkThrough: { screen: WalkThrough, title: 'WalkThrough' },
   SignUp:{ screen: SignUp, title: 'SignUp' },
+  Login:{ screen: Login, title: 'Login' },
+  ThankYou:{ screen: ThankYou, title: 'ThankYou' },
+
+  
   DrawerNav:{screen: DrawerNav,title: 'DrawerNav',
   
 navigationOptions: {
@@ -35,9 +33,10 @@ navigationOptions: {
 
 }
 const RootStack  = createStackNavigator(routes, { 
+  
   navigationOptions: ({ navigation }) => {
-    const { routeName, index } = navigation.state;
-    if (routeName == 'WalkThrough'  )
+    const { routeName } = navigation.state;
+    if (routeName == 'WalkThrough'||  routeName == 'Intial' )
       return ({ headerMode: 'none', header: null, });
   }  
 });

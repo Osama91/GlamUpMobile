@@ -64,10 +64,10 @@ class Home extends Component {
 
         </View>
         <Image resizeMode='cover'
-          style={{
-            alignSelf: 'center',
+          style={{            
             height: 400
           }}
+          
           source={{ uri: (Constant.BlogImages + item.PictureUrl) }} ref={item.ID}
           />
         <View >
