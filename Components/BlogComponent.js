@@ -15,9 +15,6 @@ const moment = require('moment');
 
 class Blog extends Component {
 
-  // static propTypes = {
-  //   navigation: NavigationType.isRequired,
-  // };
   static navigationOptions = {
     title: 'Article List'.toUpperCase(),
   };
@@ -63,7 +60,7 @@ class Blog extends Component {
         data={this.state.data}
         renderItem={this.renderItem}
         keyExtractor={this.extractItemKey}
-      //  style={styles.BlogContainer}
+        //style={styles.BlogContainer}
       />
     )
   };

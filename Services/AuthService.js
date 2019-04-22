@@ -1,6 +1,3 @@
-import {
-    Alert,
-} from 'react-native';
 import Constant from '../Services/Constant';
 import  DeviceService  from '../Services/DeviceService'
 import HelperService from './HelperService';
@@ -42,7 +39,7 @@ class AuthService {
                 AuthService.GetUserData();
             });
     }
-    static async SignUP(Email, FirstName, LastName, Password, PhoneNumber) {
+    static async SignUP(UserName, Email, Password) {
         let url = Constant.GET_SIGNUP_URL;
         return fetch(url, {
             method: 'POST',
@@ -51,14 +48,14 @@ class AuthService {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                Email: Email, Password: Password, FirstName: FirstName, LastName: LastName, PhoneNumber: PhoneNumber
+                UserName: UserName, Password: Password, Email: Email
             })
         }).then(res => HelperService.handleErrors(res));
     }
     static async SignOUT() {
         AuthService.authData = {
             token: '', tokenType: '', ExpiresIn: null,
-            FirstName: '', LastName: '',
+            FullName: '', LastName: '',
             Username: '', Password: '',
         };
         DeviceService.SaveData(Constant.TOKEN, JSON.stringify(AuthService.authData));

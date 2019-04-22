@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import { Button, Text, Icon } from 'native-base';
+import { View ,Text} from 'react-native';
+import { Button  } from 'native-base';
+import { Icon } from 'react-native-elements'
 import { styles } from './styles'
-import { FontAwesome } from '../Assets/icons';
 
 class SocialBar extends Component {
   static data = {
-    likes: 26,
-    comments: 26,
+    likes: 2333,
+    Favs: 26,
     shares: 5,
   };
 
@@ -15,8 +15,11 @@ class SocialBar extends Component {
     super(props);
     this.state = {
       likes: this.props.likes || SocialBar.data.likes,
-      comments: this.props.comments || SocialBar.data.comments,
+      Favs: this.props.Favs || SocialBar.data.Favs,
       shares: this.props.shares || SocialBar.data.shares,
+      ThumbsUpIsPressed: false,
+      FavIsPressed:false,
+      ShareIsPressed:false,
     };
   }
 
@@ -24,22 +27,87 @@ class SocialBar extends Component {
     const defaultCount = SocialBar.data.likes;
     this.setState({
       likes: this.state.likes === defaultCount ? this.state.likes + 1 : defaultCount,
+      ThumbsUpIsPressed: !this.state.ThumbsUpIsPressed
     });
   };
 
-  onCommentButtonPressed = () => {
-    const defaultCount = SocialBar.data.comments;
+
+  onFavButtonPressed = () => {
+    const defaultCount = SocialBar.data.Favs;
     this.setState({
-      comments: this.state.comments === defaultCount ? this.state.comments + 1 : defaultCount,
+      Favs: this.state.Favs === defaultCount ? this.state.Favs + 1 : defaultCount,
+      FavIsPressed: !this.state.FavIsPressed
     });
   };
-
   onShareButtonPressed = () => {
     const defaultCount = SocialBar.data.shares;
     this.setState({
       shares: this.state.shares === defaultCount ? this.state.shares + 1 : defaultCount,
+      ShareIsPressed: !this.state.ShareIsPressed
     });
   };
+  ThumbsUpStyle = function () {
+    if (this.state.ThumbsUpIsPressed) {
+      return {
+        color: 'red',
+      }
+    } else {
+      return {
+        color: 'black',
+      }
+    }
+  }
+  FavUpStyle = function () {
+    if (this.state.FavIsPressed) {
+      return {
+        color: 'red',
+      }
+    } else {
+      return {
+        color: 'black',
+      }
+    }
+  }
+  ShareStyle = function () {
+    if (this.state.ShareIsPressed) {
+      return {
+        color: 'red',
+      }
+    } else {
+      return {
+        color: 'black',
+      }
+    }
+  }
+
+
+
+  ThumbsUpStyleName = function () {
+    if (this.state.ThumbsUpIsPressed) {
+      return 'thumbs-up'      
+    } else {
+      return  'thumbs-o-up'
+    }
+  }
+
+  FavStyleName= function () {
+    if (this.state.FavIsPressed) {
+      return 'star'      
+    } else {
+      return  'star-o'
+    }
+  }
+
+  ShareStyleName= function () {
+    if (this.state.ShareIsPressed) {
+      return 'share'      
+    } else {
+      return  'share-square-o'
+    }
+  }
+
+  
+ 
 
   render() {
     // const {
@@ -47,44 +115,47 @@ class SocialBar extends Component {
     // } = this.defineStyles();
 
     const likes = this.state.likes + (this.props.showLabel ? ' Likes' : '');
-    const comments = this.state.comments + (this.props.showLabel ? ' Comments' : '');
+    const Favs = this.state.Favs + (this.props.showLabel ? ' Favs' : '');
     const shares = this.state.shares + (this.props.showLabel ? ' Shares' : '');
 
     return (
+
       <View style={styles.Horizonalcontainer}>
         <View style={styles.section}>
-          <Button transparent onPress={this.onLikeButtonPressed}>
-            {/* <Text  style={styles.icon}>{FontAwesome.heart}</Text> */}
-
-            <Icon type='FontAwesome'
-              name='heart'
-              size={12}
-              style={styles.icon}
-              expandedIconStyle={{ color: "red" }}
+          <Button iconLeft transparent >           
+            <Icon   
+              name={this.ThumbsUpStyleName()} reverse
+              type='font-awesome'
+              size={24}
+              color='white'
+              iconStyle={this.ThumbsUpStyle()}
+              onPress={this.onLikeButtonPressed}                           
             />
-
             <Text style={styles.label}>{likes}</Text>
           </Button>
         </View>
         <View style={styles.section}>
-          {/* <Button transparent onPress={this.onCommentButtonPressed}> */}
-          <Text style={{color:'black'}} color='black' >{FontAwesome.user}</Text>
-            <Icon type='FontAwesome'
-              name='comment'
-              size={12}
-              style={styles.icon}
-              expandedIconStyle={{ color: "red" }}/>
-            <Text style={styles.label}>{comments}</Text>
-          {/* </Button> */}
+        <Button iconLeft transparent >             
+            <Icon  
+             name={this.FavStyleName()} reverse              
+             type='font-awesome'              
+              size={24}
+              color='white'
+              iconStyle={this.FavUpStyle()}
+              onPress={this.onFavButtonPressed}
+              />
+            <Text style={styles.label}>{Favs}</Text>
+          </Button>
         </View>
         <View style={styles.section}>
-          <Button transparent onPress={this.onShareButtonPressed}>
-            {/* <Text    style={styles.icon}>{FontAwesome.user}</Text> */}
-            <Icon type='FontAwesome'
-              name='comment'
-              size={12}
-              style={styles.icon}
-              expandedIconStyle={{ color: "red" }}
+          <Button transparent >            
+            <Icon 
+             name={this.ShareStyleName()} reverse 
+             type='font-awesome'
+              size={24}
+              color='white'
+              iconStyle={this.ShareStyle()}
+              onPress={this.onShareButtonPressed}
             />
             <Text style={styles.label}>{shares}</Text>
           </Button>
