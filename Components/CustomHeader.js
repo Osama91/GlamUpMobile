@@ -27,10 +27,10 @@ class CustomHeader extends Component {
               transparent >
 
               
-              <Icon name='Menu'
+              <Icon name='menu'
               onPress={() => 
                 
-                this.props.navigation.openDrawer()}
+                this.props.navigation.navigate('DrawerOpen')}
               />
             </Button>
           </Left>

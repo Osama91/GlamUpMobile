@@ -27,20 +27,27 @@ class Login extends Component {
             checked: false
         }
     }
+    // static navigationOptions = ({ navigation }) => {
+    //     return {
+    //         headerStyle: {
+    //             backgroundColor: barndMainColor,
+    //             shadowColor: 'transparent',
+    //             shadowRadius: 0,
+    //             shadowOffset: {
+    //                 height: 0,
+    //             }
+    //         },
+
+    //     };
+    // };
     static navigationOptions = ({ navigation }) => {
         return {
-            headerStyle: {
-                backgroundColor: barndMainColor,
-                shadowColor: 'transparent',
-                shadowRadius: 0,
-                shadowOffset: {
-                    height: 0,
-                }
-            },
-
+           title: "Login",
+            position: 'center'
         };
-    };
+      };
 
+    
     render() {
         console.log(style.fontSize);
         return (
@@ -83,7 +90,7 @@ class Login extends Component {
                 </Button>
                 <View style={styles.Horizonalcontainer}>
                     <SocialIcon style={styles.halfwidth}
-                        Icon title="Continue With Facebook"
+                        Icon title="Contie With Facebook"
                         onPress={this.handleFacebookLogin}
                         type='facebook'
                     />

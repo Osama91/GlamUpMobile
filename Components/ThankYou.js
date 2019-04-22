@@ -4,7 +4,7 @@ import { Platform, StyleSheet, Text, View, TouchableOpacity   } from 'react-nati
  import { Button    } from 'native-base';
  
 import ScalableText, { scaleText } from 'react-native-text';
-
+import CustomHeader from './CustomHeader';
 
 import YouTube from 'react-native-youtube'
 import { styles } from './styles'
@@ -30,6 +30,7 @@ class ThankYou extends Component {
     return (
 
  <View style={styles.containerFull}>
+ 
        <View  style={{      alignItems: 'center'   }}>
         
               <View paddingVertical={30} />
