@@ -3,8 +3,8 @@ import { CheckBox } from 'react-native-elements'
 import { View, Image, ScrollView } from 'react-native';
 import { styles } from './styles'
 import { SocialIcon, Input } from 'react-native-elements'
-import { Button, Text, Item, Icon } from 'native-base';
-import { LoginButton, AccessToken, LoginManager } from 'react-native-fbsdk';
+import { Button, Text, Icon } from 'native-base';
+import { LoginManager } from 'react-native-fbsdk';
 import InstagramLogin from 'react-native-instagram-login'
 import AuthService from '../Services/AuthService';
 import HelperService from '../Services/HelperService'
@@ -30,7 +30,7 @@ class SignUp extends Component {
     } 
 
   }
-  static navigationOptions = ({ navigation }) => {
+  static navigationOptions = () => {
     return {
       header: null,
       headerMode: 'none',
@@ -51,9 +51,9 @@ class SignUp extends Component {
     }
     this.setState({ loading: true, }, () => {
       AuthService.SignUP(this.state.UserName,this.state.Email, this.state.Password)
-        .then(r => {
+        .then(() => {
           AuthService.Login(this.state.UserName, this.state.Password)
-            .then((r) => {
+            .then(() => {
               this.props.navigation.navigate('Home', {});
               this.setState({ loading: false, });
             }).catch(ex => {
@@ -68,7 +68,6 @@ class SignUp extends Component {
     })
   }
   Login = () => {
-    let r = this.props.navigation.navigate('Login');
   }
   handleFacebookLogin = () => {
     LoginManager.logInWithReadPermissions(['public_profile', 'UserName']).then(

@@ -9,7 +9,6 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 import com.facebook.appevents.AppEventsLogger;
-import com.inprogress.reactnativeyoutube.ReactNativeYouTube;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
@@ -40,8 +39,7 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
             new AsyncStoragePackage(),
             new RNCWebViewPackage(),
-            new FBSDKPackage(mCallbackManager),
-            new ReactNativeYouTube(),
+            new FBSDKPackage(mCallbackManager),            
             new VectorIconsPackage(),
             new RNGestureHandlerPackage()
       );

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, TouchableOpacity   } from 'react-native';
+import { Text, View   } from 'react-native';
  import {  Icon } from 'react-native-elements';
  import { Button    } from 'native-base';
  
-import ScalableText, { scaleText } from 'react-native-text';
+import { scaleText } from 'react-native-text';
 
 
-import YouTube from 'react-native-youtube'
 import { styles } from './styles'
 
 
@@ -16,7 +15,7 @@ const style = scaleText({
 
 });
 class ThankYou extends Component {
-  static navigationOptions = ({ navigation }) => {
+  static navigationOptions = () => {
     return {
        header: null,
       headerMode: 'none',
@@ -73,12 +72,10 @@ class ThankYou extends Component {
 
   }
   SignUp = () => {
-    let r = this.props.navigation.navigate('SignUp');
 
   }
 
   Profile = () => {
-    let r = this.props.navigation.navigate('Profile');
     
 }
 

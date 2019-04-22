@@ -3,69 +3,79 @@ import {
   FlatList,
   Image,
   View,
-  TouchableOpacity, Text
+  TouchableOpacity, Text, ScrollView
 } from 'react-native';
 import { styles } from './styles'
 import SocialBar from '../Components/SocialBar';
-import { data } from '../data';
-// import NavigationType from '../../config/navigation/propTypes';
-
+import LookUpService from '../Services/LookUpService'
+import Constant from '../Services/Constant';
 const moment = require('moment');
 
 
-class Blog extends Component {
-
+class Blog extends React.Component {
+  // static propTypes = {
+  //   navigation: NavigationType.isRequired,
+  // };
   static navigationOptions = {
-    title: 'Article List'.toUpperCase(),
+    title: 'Article View'.toUpperCase(),
   };
 
-  state = {
-    data: data.getArticles(),
-  };
-
-  extractItemKey = (item) => `${item.id}`;
-
-  onItemPressed = () => {
-    // this.props.navigation.navigate('Article', { id: item.id });
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: false,
+      data: [],
+    }
+    // this.data = data.getArticle(articleId);
+  }
+  componentWillMount() {
+    this.setState({ data: this.props.navigation.getParam('item', 1) });
+  }
 
   renderItem = ({ item }) => (
-
-    <TouchableOpacity
-      delayPressIn={70}
-      activeOpacity={0.8}
-      onPress={() => this.onItemPressed(item)}>
-      <View style={styles.card}>
-        <View style={{ flexDirection: 'column', }}>
-          <Text style={styles.header}>{item.header}</Text>          
-          <Text style={styles.momentTitle}>{moment().add(item.time, 'seconds').fromNow()}</Text>
-
-        </View>
-        <Image resizeMode='cover'
-          style={{
-            alignSelf: 'center',
-            height: 350
-          }}
-          source={item.photo} />
-        <View >
-          <SocialBar />
-        </View >
-      </View>
-    </TouchableOpacity>
+    <Text style={styles.momentTitle}>{item.Description}</Text>
   );
-
+  extractItemKey = (item) => `${item.ID}`;
   render() {
     return (
-      <FlatList
-        data={this.state.data}
-        renderItem={this.renderItem}
-        keyExtractor={this.extractItemKey}
-        //style={styles.BlogContainer}
-      />
-    )
-  };
+      <View>   
+         <ScrollView style={styles.root}>
+        <View >
+        <Image resizeMode='cover'
+          style={{            
+            height: 400            
+          }}
+          source={{ uri: (Constant.BlogImages + item.PictureUrl) }} ref={item.ID}
+          />
+          <View >
+            <View>
+              <Text style={styles.header} >{this.state.data.Title}</Text>
+              <Text style={styles.momentTitle}>
+                {moment().add(this.state.data.time, 'seconds').fromNow()}
+              </Text>
+            </View>            
+          </View>
+          <View >
+            <View>
+              <FlatList
+                data={this.state.data.BlogParagraph}
+                renderItem={this.renderItem}
+                keyExtractor={this.extractItemKey}
+              //style={styles.BlogContainer}
+              />
 
+            </View>
+          </View>
+          <View>
+            <SocialBar />
+          </View>
+        </View>
+      </ScrollView>
+   
+      </View>
+   
+   )
+  }
 }
-
 
 export default Blog;

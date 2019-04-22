@@ -17,7 +17,7 @@ class Constant {
     //#endregion
 
     static isMenuOpen = false;
-    static BASE_URL = baseURL;
+    static BASE_URL = 'http://osamagamal-001-site3.ctempurl.com';
     static URL_UPDATE_VERSION = Constant.BASE_URL + '/version.json';
     static URL_ODATA_SERVER = Constant.BASE_URL + '/odata';
     static URL_API_SERVER = Constant.BASE_URL + '/api';
@@ -80,7 +80,7 @@ static ODATA_Store_URL= Constant.URL_ODATA_SERVER + "/Store";
     //#endregion
 
     //static StyleRelatedImage = Constant.BASE_URL + "/assets/Uploads/StyleRelatedImage/";
-    static CategoryDisplayImage = Constant.MediaBaseUrl + "/CategoryImages/";//Constant.BASE_URL + "/assets/Uploads/CategoryImages/";
+    static BlogImages = Constant.BASE_URL + "/assets/Images/Blogs/";//Constant.BASE_URL + "/assets/Uploads/CategoryImages/";
     //static CommunityImage = Constant.BASE_URL + "/assets/Uploads/CommunityImage/";
     static MediaBaseUrl = Constant.BASE_URL;
     static ItemImage = Constant.MediaBaseUrl;//Constant.BASE_URL + "/assets/Uploads/";

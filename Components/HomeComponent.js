@@ -7,8 +7,9 @@ import {
 } from 'react-native';
 import { styles } from './styles'
 import SocialBar from '../Components/SocialBar';
-import { data } from '../data';
 import LookUpService from '../Services/LookUpService'
+import HelperService from '../Services/HelperService'
+import Constant from '../Services/Constant'
 const moment = require('moment');
 class Home extends Component {
 
@@ -23,6 +24,8 @@ class Home extends Component {
       loading: false,
       data: [],
     }
+
+    console.log(Constant.BlogImages );
 
 
 
@@ -43,8 +46,8 @@ class Home extends Component {
 
   extractItemKey = (item) => `${item.ID}`;
 
-  onItemPressed = () => {
-    // this.props.navigation.navigate('Article', { id: item.id });
+  onItemPressed = (item) => {
+    this.props.navigation.navigate('Blog', { item: item });
   };
 
   renderItem = ({ item }) => (
@@ -54,6 +57,7 @@ class Home extends Component {
       activeOpacity={0.8}
       onPress={() => this.onItemPressed(item)}>
       <View style={styles.card}>
+      
         <View style={{ flexDirection: 'column', }}>
           <Text style={styles.header}>{item.Title}</Text>
           <Text style={styles.momentTitle}>{moment().add(item.CreationDate, 'seconds').fromNow()}</Text>
@@ -62,9 +66,10 @@ class Home extends Component {
         <Image resizeMode='cover'
           style={{
             alignSelf: 'center',
-            height: 350
+            height: 400
           }}
-          source={{uri:'https://static.makeuseof.com/wp-content/uploads/2017/05/macos-windows-10-hackintosh-670x335.jpg'}} />
+          source={{ uri: (Constant.BlogImages + item.PictureUrl) }} ref={item.ID}
+          />
         <View >
           <SocialBar />
         </View >

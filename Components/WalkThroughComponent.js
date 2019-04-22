@@ -4,7 +4,6 @@ import { Button } from 'native-base';
 
 
 
-import YouTube from 'react-native-youtube'
 import { styles } from './styles'
 import AuthService from '../Services/AuthService';
 import DeviceService from '../Services/DeviceService'
@@ -20,9 +19,9 @@ class WalkThrough extends Component {
     DeviceService.GetData(Constant.TOKEN).then((r) => {
       if (r !== null) {
         AuthService.authData = JSON.parse(r);
-        this.setState({ loaded: true });
+      
       }
-
+      this.setState({ loaded: true });
       //navigation.navigate('Main', {});
     });
   }
@@ -78,7 +77,10 @@ class WalkThrough extends Component {
     let r = this.props.navigation.navigate('SignUp');
   }
 
-   
+  Skip = () => {
+    let r = this.props.navigation.navigate('Home');
+    
+}
 
   Profile = () => {
     let r = this.props.navigation.navigate('Profile');

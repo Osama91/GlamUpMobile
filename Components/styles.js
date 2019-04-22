@@ -212,6 +212,7 @@ Image : {
   momentTitle: {
     padding:0,
     paddingLeft: 5,
+    color: '#000',
   },
   card: {    
   },
@@ -221,6 +222,12 @@ Image : {
   time: {
     marginTop: 5,
   },
+  root: {
+        backgroundColor: 'white',
+      },
+      title: {
+        marginBottom: 5,
+      },
   // BlogContainer: {          
   //       paddingHorizontal: 14,
   //       paddingVertical: 8,
