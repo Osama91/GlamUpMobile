@@ -40,6 +40,24 @@ class Login extends Component {
             return;
           }   
     }
+    // static navigationOptions = ({ navigation }) => {
+    //     return {
+    //         headerStyle: {
+    //             backgroundColor: barndMainColor,
+    //             shadowColor: 'transparent',
+    //             shadowRadius: 0,
+    //             shadowOffset: {
+    //                 height: 0,
+    //             }
+    //         },
+
+    //     };
+    // };
+    static navigationOptions = ({ navigation }) => {
+        return {
+           title: "Login",
+            position: 'center'
+        }}
 
     static navigationOptions = () => {
         
@@ -61,8 +79,10 @@ class Login extends Component {
                     
 
         };
-    };
+      };
 
+    
+      
     render() {        
         return (                
             <View style={styles.MainContainer}>          
@@ -125,7 +145,7 @@ class Login extends Component {
                 </Button>
                 <View style={styles.Horizonalcontainer}>
                     <SocialIcon style={styles.halfwidth}
-                        Icon title="Continue With Facebook"
+                        Icon title="Contie With Facebook"
                         onPress={this.handleFacebookLogin}
                         type='facebook'
                     />

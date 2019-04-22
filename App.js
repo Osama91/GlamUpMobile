@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { Root } from "native-base";
 import {
@@ -8,6 +9,7 @@ import {
 import WalkThrough from './Components/WalkThroughComponent'
 import SignUp from './Components/SignUpComponent'
 import LoginComponent from './Components/LoginComponent'
+import DrawerNav from './Components/Navigators/DrawerNav';
 import Blog from './Components/BlogComponent'
 import Home from './Components/HomeComponent'
 import Article from './Components/ArticleComponent'
@@ -23,22 +25,19 @@ import BodySpecs from './Components/BodySpecs';
 export const routes = {
   WalkThrough: { screen: WalkThrough, title: 'WalkThrough' },
   SignUp:{ screen: SignUp, title: 'SignUp' },
-  Login:{screen : LoginComponent,title:'Login'},
-  Blog:{screen : Blog,title:'Blog'},
-  Home :{screen : Home,title:'Home'},
-  Article :{screen : Article,title:'Article'},  
-   Profile:{screen : Profile,title:'Profile'},
-  PersonalInformation:{screen : PersonalInformation,title:'PersonalInformation'},
-  ThankYou:{screen : ThankYou,title:'ThankYou'},
-  BodySpecs:{screen : BodySpecs,title:'BodySpecs'},
-
-  ForgetPassword:{screen : ForgetPassword,title:'ForgetPassword'},
+  DrawerNav:{screen: DrawerNav,title: 'DrawerNav',
+  
+navigationOptions: {
+  header: null,
+  headerMode:'none'
+}},
+  
 
 }
 const RootStack  = createStackNavigator(routes, { 
   navigationOptions: ({ navigation }) => {
     const { routeName, index } = navigation.state;
-    if (routeName == 'WalkThrough')
+    if (routeName == 'WalkThrough'  )
       return ({ headerMode: 'none', header: null, });
   }  
 });

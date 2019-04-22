@@ -6,28 +6,37 @@ import { styles } from './styles'
   Body,Container, Header, Title,       Content  , Card, CardItem} from 'native-base';
 import { LoginButton, AccessToken,LoginManager } from 'react-native-fbsdk';
 import InstagramLogin from 'react-native-instagram-login'
-import CustomHeader from './CustomHeader';
+import DrawerButton from './DrawerButton';
  
 class Profile extends Component {
   constructor(props) {
     super(props)
+    {
 
-    
+ }
   }
+  // static navigationOptions = ({ navigation }) => {
+  //   return {
+  //     header: null,
+  //     headerMode: 'none',
+  //       headerLeft: <DrawerButton navigation = {navigation}/>
+  //    };
+  // };
   static navigationOptions = ({ navigation }) => {
     return {
        title: "Profile",
         position: 'center'
     };
   };
-   
+
  
    
   render() {
     return (
-<View     >
- 
- 
+<View     > 
+
+
+
          <TextInput style={styles.InputContainer}
           placeholder='Username'  />
           <View paddingVertical={10} />

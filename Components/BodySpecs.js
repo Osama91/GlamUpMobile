@@ -5,12 +5,13 @@ import {
 import { styles } from './styles';
 import { Button, Text ,Icon } from 'native-base';
 import { ScrollView } from 'react-native-gesture-handler';
+import DrawerButton from './DrawerButton';
+import CustomHeader from './CustomHeader';
 
 let Imagepath = require('../Assets/Images/height.png');
 
 class BodySpecs extends Component {
  
-
   constructor(){
  
     super();
@@ -21,6 +22,7 @@ class BodySpecs extends Component {
  
     }
  
+
   }
  
   Load_Height_Image=()=>{
@@ -65,16 +67,20 @@ class BodySpecs extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
        title: "Body Specs",
- 
-    };
+       headerLeft: <DrawerButton navigation  = {navigation}/>
+      }
   };
       
     render (){
         return(
 
 <View >
+
+
 <ScrollView>
 <View paddingVertical={10} />
+
+
 
 <View style={styles.ImageContainer}>
         <Image  style = {styles.Image}
@@ -124,7 +130,7 @@ class BodySpecs extends Component {
         style={{flex:1  }}
         onPress={() => {
           
-          this.props.navigation.navigate('ForgetPassword', {})
+          this.props.navigation.navigate('ThankYou')
         }} 
 
                  full dark >

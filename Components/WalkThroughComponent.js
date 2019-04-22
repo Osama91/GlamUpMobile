@@ -83,7 +83,7 @@ class WalkThrough extends Component {
 }
 
   Profile = () => {
-    let r = this.props.navigation.navigate('Profile');
+    let r = this.props.navigation.navigate('DrawerNav');
     
 }
 

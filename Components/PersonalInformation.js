@@ -7,8 +7,8 @@ import { Button, Text ,Icon } from 'native-base';
  import InstagramLogin from 'react-native-instagram-login'
 import RNPickerSelect from 'react-native-picker-select';
 import MultiSelect from 'react-native-multiple-select';
-
-
+import {HeaderBackButton} from 'react-navigation';
+import CustomBackButton from './CustomBackButton';
 const sports = [
     {
       label: 'Married',
@@ -98,7 +98,12 @@ class PersonalInformation extends Component {
         };
       };
 
-       
+      
+      static defaultNavigationOptions = ({ navigation }) => {
+        return {
+          headerBackTitle:'Home'
+        };
+      };
       constructor(props) {
         super(props);
     
@@ -162,6 +167,10 @@ class PersonalInformation extends Component {
 
 
     <View style = {styles.dropdown}> 
+
+    <HeaderBackButton backTitleVisible={true}  
+
+    title = 'Personal Information ' position ='center' onPress={() => this.props.navigation.navigate('WalkThrough')}/>
 
     <ScrollView> 
  

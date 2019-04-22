@@ -5,6 +5,8 @@ import { Text, View   } from 'react-native';
  
 import { scaleText } from 'react-native-text';
 
+import ScalableText, { scaleText } from 'react-native-text';
+import CustomHeader from './CustomHeader';
 
 import { styles } from './styles'
 
@@ -29,6 +31,7 @@ class ThankYou extends Component {
     return (
 
  <View style={styles.containerFull}>
+ 
        <View  style={{      alignItems: 'center'   }}>
         
               <View paddingVertical={30} />
