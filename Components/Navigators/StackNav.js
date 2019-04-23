@@ -11,7 +11,10 @@ import PersonalInformation from '../PersonalInformation';
 import Home from '../HomeComponent'
 import ThankYou from '../ThankYou';
 import BodySpecs from '../BodySpecs';
+import MultipleSelectionList from '../MultipleSelectionList'
+import Profile from '../Profile'
 import { styles } from '../styles'
+
 import{Icon} from 'native-base';
 import { scaleText } from 'react-native-text';
 
@@ -26,7 +29,10 @@ const StackNav = createStackNavigator({
   PersonalInformation:{screen : PersonalInformation,title:'PersonalInformation'},
   Blog:{screen : Blog,title:'Blog'},
   ThankYou:{screen : ThankYou,title:'ThankYou'},
-  BodySpecs:{screen : BodySpecs,title:'BodySpecs'},   
+  BodySpecs:{screen : BodySpecs,title:'BodySpecs'}, 
+  MultipleSelectionList:{screen : MultipleSelectionList ,title: 'MultipleSelectionList'},
+  Profile:{screen : Profile,title:'Profile'}, 
+
 },
 
   {
@@ -34,28 +40,34 @@ const StackNav = createStackNavigator({
       return { 
 
         header: (
-          <View style={styles.Horizonalcontainer}>
+          <View style={styles.HeaderContainer}>
+          <View style={styles.HeaderItems}>
+
             <Icon
-            style={{ paddingLeft: 10 }}            
+            style={{ paddingLeft: 50 }}            
             name="bell-o" type='FontAwesome'
             size={30}
           />  
          <Icon
-            style={{ paddingLeft: 10 }}            
+            style={{ paddingLeft: 20 }}            
             name="user-circle-o" type='FontAwesome'
             size={30}
           />  
-           <Text style={{ fontSize: style.fontSize, color: 'white' }}
+           <Text style={{ fontSize: style.fontSize, color: 'black' }}
                 > GLAM UP  </Text>
+              
           <Icon
-            style={{ paddingLeft: 10 }}
+            style={{ paddingLeft: 100 }}
             onPress={() => navigation.openDrawer()}
             name="menu"
             size={30}
           />
-             </View>
-        )  
-
+          </View>
+              </View>
+        )   
+         
+         
+  
        };
     }
   }

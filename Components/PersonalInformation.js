@@ -9,6 +9,9 @@ import RNPickerSelect from 'react-native-picker-select';
 import MultiSelect from 'react-native-multiple-select';
 import {HeaderBackButton} from 'react-navigation';
 import CustomBackButton from './CustomBackButton';
+//import ColorPalette   from 'react-native-color-palette';
+import  ControlledColorPicker from './ColorPallete';
+import MultipleSelectionList from './MultipleSelectionList';
 const sports = [
     {
       label: 'Married',
@@ -91,6 +94,7 @@ const Colors = [
 
 class PersonalInformation extends Component {
     
+
     static navigationOptions = ({ navigation }) => {
         return {
            title: "Personal Information",
@@ -122,8 +126,9 @@ class PersonalInformation extends Component {
           FavouritBrandsSelectedValue: undefined,
           SkinColorSelectedValue: undefined,
           PreferredStyleSelectedValue: undefined,
-          ColorsSelectedValue:undefined
- 
+          ColorsSelectedValue:undefined,
+          const :{goBack} = this.props.navigation 
+
         };
       }
 
@@ -166,13 +171,13 @@ class PersonalInformation extends Component {
     return (
 
 
-    <View style = {styles.dropdown}> 
+    <View  > 
 
     <HeaderBackButton backTitleVisible={true}  
 
-    title = 'Personal Information ' position ='center' onPress={() => this.props.navigation.navigate('WalkThrough')}/>
+    title = 'Personal Information ' position ='center' onPress={() =>  goBack() }/>
 
-    <ScrollView> 
+    <ScrollView style = {{fles: 1 }}> 
  
      
     <RNPickerSelect
@@ -283,10 +288,9 @@ class PersonalInformation extends Component {
     />
     <View paddingVertical={10} />
 
-  <RNPickerSelect
+  <RNPickerSelect 
       mode="dropdown"  
-      placeholder={PreferredStylePlaceHolder}
-  
+      placeholder={PreferredStylePlaceHolder} 
       items={PreferredStyle}
       onValueChange={value => {
         this.setState({
@@ -302,32 +306,18 @@ class PersonalInformation extends Component {
         this.inputRefs.PreferredStyleSelectedValue = el;
       }}
       
-    />
+      />
+       
     
     <View paddingVertical={10} />
 
-    <RNPickerSelect
-        mode="dropdown"  
-        placeholder={ColorsPlaceHolder}
-    
-        items={Colors}
-        onValueChange={value => {
-          this.setState({
-            ColorsSelectedValue: value,
-    
-            
-          });
-        }}
-         style={pickerSelectStyles}
-        value={this.state.ColorsSelectedValue}
-        useNativeAndroidPickerStyle={false}
-        ref={el => {
-          this.inputRefs.ColorsSelectedValue = el;
-        }}
-        
-      />
+  
+
+      <MultipleSelectionList/>
 
       <View paddingVertical={10} />
+
+ 
 
         <Button  uppercase={false}
         

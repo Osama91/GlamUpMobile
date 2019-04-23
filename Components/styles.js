@@ -1,6 +1,8 @@
 import { Platform, StyleSheet, Dimensions, View } from 'react-native';
 import { bordersColor, inputBackground, barndMainColor, mainbackgroundColor } from '../Services/SettingService'
 const { width, height } = Dimensions.get('window');
+
+ 
 const styles = StyleSheet.create({
   input: {
     fontFamily: 'Montserrat',
@@ -50,6 +52,25 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'stretch',
     justifyContent: 'space-around',
+    
+  },
+  HeaderContainer: {
+    fontFamily: 'Montserrat',
+      flexDirection: 'row',
+    alignItems: 'stretch',
+    justifyContent: 'space-around',
+    backgroundColor: barndMainColor,
+    height: 50,
+    width:width
+  },
+  HeaderItems: {
+    fontFamily: 'Montserrat',
+    margin: 10,
+     flexDirection: 'row',
+    alignItems: 'stretch',
+    justifyContent: 'space-around',
+    backgroundColor: barndMainColor,
+    marginTop: 5
   },
   section:{
     //backgroundColor:'white'

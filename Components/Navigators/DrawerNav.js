@@ -1,18 +1,18 @@
 import {createDrawerNavigator } from 'react-navigation';
  
 import StackNav from './StackNav';
-import Profile from '../Profile';
+import PersonalInformation from '../PersonalInformation';
 
 
  const DrawerNav  = createDrawerNavigator ({
 
     
-    BodySpecs :{
+    Home :{
         screen : StackNav,
-        } ,       
-        Profile:{
-            screen: Profile
-        }
+        } ,
+        PersonalInformation :{
+            screen : PersonalInformation,
+            } ,
     });
 
  export default DrawerNav;

@@ -35,8 +35,9 @@ class Profile extends Component {
     return (
 <View     > 
 
+<ScrollView  > 
 
-
+ 
          <TextInput style={styles.InputContainer}
           placeholder='Username'  />
           <View paddingVertical={10} />
@@ -91,25 +92,11 @@ class Profile extends Component {
         full dark >
         <Text color='Black' >Body Specs</Text>
       </Button>
+      </ScrollView>
     </View>
     )};
 
-
-
-    validate = (text) => {
-        console.log(text);
-        let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
-        if(reg.test(text) === false)
-        {
-        console.log("Email is Not Correct");
-        this.setState({email:text})
-        return false;
-          }
-        else {
-          this.setState({email:text})
-          console.log("Email is Correct");
-        }
-        }
+ 
 
         PersonalInformation = () => {
             let r = this.props.navigation.navigate('PersonalInformation');
