@@ -6,9 +6,9 @@ import { styles } from './styles'
 
 class SocialBar extends Component {
   static data = {
-    likes: 2333,
-    Favs: 26,
-    shares: 5,
+    likes: 0,
+    Favs: 0,
+    shares: 0,
   };
 
   constructor(props) {

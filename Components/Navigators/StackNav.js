@@ -49,7 +49,8 @@ const StackNav = createStackNavigator({
             size={30}
           />  
          <Icon
-            style={{ paddingLeft: 20 }}            
+            style={{ paddingLeft: 20 }}     
+            onPress={() => navigation.navigate('Profile', {})}       
             name="user-circle-o" type='FontAwesome'
             size={30}
           />  

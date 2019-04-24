@@ -9,11 +9,7 @@ import WalkThrough from './Components/WalkThroughComponent'
 import SignUp from './Components/SignUpComponent'
 import Login from './Components/LoginComponent'
 import ThankYou from './Components/ThankYou'
-
 import DrawerNav from './Components/Navigators/DrawerNav';
-
-
-
 
 export const routes = {
   Intial: { screen: Intial, title: 'Intial' },

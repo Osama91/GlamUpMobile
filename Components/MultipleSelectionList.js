@@ -51,7 +51,7 @@ const items = [
 
   render() {
     return (
-      <View   >
+      <View  style={{marginBottom:5}}  >
 
         <SectionedMultiSelect
           items={items}

@@ -83,6 +83,7 @@ class AuthService {
             AuthService.authData.FullName = res.FullName;                
             AuthService.authData.Username = res.Username;            
             AuthService.authData.ExpiresIn = Date.parse(res.ExpiresIn);
+            
             // var t = new Date();date.parse(res.ExpiresIn)
             // t.setSeconds(t.getSeconds() + res.expires_in);
             // AuthService.authData.expiry = t;

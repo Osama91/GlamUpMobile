@@ -69,7 +69,7 @@ class SignUp extends Component {
         .then(() => {
           AuthService.Login(this.state.UserName, this.state.Password)
             .then(() => {
-              this.props.navigation.navigate('Home', {});
+              this.props.navigation.navigate('ThankYou', {});
               this.setState({ loading: false, });
             }).catch(ex => {
               HelperService.handleErrorsUI(ex);
@@ -90,6 +90,7 @@ class SignUp extends Component {
         if (result.isCancelled) {
           console.log('Login cancelled')
         } else {
+          this.props.navigation.navigate('WalkThrough', {})
           console.log('Login success with permissions: ' + result.grantedPermissions.toString())
         }
       },
@@ -192,8 +193,10 @@ class SignUp extends Component {
             onLoginSuccess={(token) => {
               console.log(token);
               this.setState({ token });
-              AuthService.Instagram(token);
-              this.props.navigation.navigate('WalkThrough', {})
+              AuthService.Instagram(token).then(
+                this.props.navigation.navigate('ThankYou', {})
+              )
+              
             }
             }
             onLoginFailure={(data) =>
@@ -208,7 +211,7 @@ class SignUp extends Component {
               this.props.navigation.navigate('Login', {})
             }}
             full dark >
-            <Text style={{ color: 'white' }} uppercase={false} >If you are a member Login</Text>
+            <Text style={{ color: 'white'}} uppercase={false} >If you are a member Login</Text>
           </Button>
         </View>
       </View>

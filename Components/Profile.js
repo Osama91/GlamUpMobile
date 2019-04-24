@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { CheckBox } from 'react-native-elements'
 import { View, Image, ScrollView ,TextInput} from 'react-native';
 import { styles } from './styles'
+import { HeaderBackButton } from 'react-navigation';
  import { Button, Text, Item ,Icon      ,    Left, Right, 
   Body,Container, Header, Title,       Content  , Card, CardItem} from 'native-base';
 import { LoginButton, AccessToken,LoginManager } from 'react-native-fbsdk';
@@ -33,7 +34,11 @@ class Profile extends Component {
    
   render() {
     return (
-<View     > 
+<View   style={{flex:1}}  > 
+
+<HeaderBackButton backTitleVisible={true}
+
+title='Profile' position='center' onPress={() => goBack()} />
 
 <ScrollView  > 
 
@@ -66,7 +71,7 @@ class Profile extends Component {
         rightIcon={{name: 'arrow'}}
         onPress={() => {
           
-          this.props.navigation.navigate('Login', {})
+       //   this.props.navigation.navigate('Login', {})
         }} 
         full dark >
         <Text color='Black'   >Change Password</Text>

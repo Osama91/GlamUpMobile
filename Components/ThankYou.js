@@ -41,7 +41,8 @@ class ThankYou extends Component {
           <Text style={{ fontSize:20 ,color: 'black' }}>  Have a nice day! </Text>
           <View paddingVertical={10} />
 
-
+          <Text style={{ fontSize: style.fontSize, color: 'black' }}> Glam Up </Text>
+          <View paddingVertical={10} />
           <Icon type='font-awesome'
             name='smile-o'
             size={100}
@@ -49,17 +50,17 @@ class ThankYou extends Component {
         </View>
 
 
-        <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+        <View style={{ flex: 1, justifyContent: 'flex-end'}}>
           <Button
             uppercase={false}
             rightIcon={{ name: 'arrow' }}
-
+            full light 
             onPress={() => {
 
-              this.props.navigation.navigate('Profile', {})
+              this.props.navigation.navigate('Home', {})
             }}  >
 
-            <Text color='white'   >Let's Rock</Text>
+            <Text color='white' style={{fontSize:30,padding:5 }}   >Let's Rock</Text>
             <Icon type='font-awesome'
               name='arrow-right'
               size={20} />

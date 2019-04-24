@@ -125,7 +125,7 @@ class Login extends Component {
                     onPress={() => {
                         this.setState({ loading: true, }, () => {
                           AuthService.Login(this.state.UserName, this.state.password).then((r) => {                          
-                              this.props.navigation.navigate('WalkThrough', {});
+                              this.props.navigation.navigate('Home', {});
                             this.setState({ loading: false });
                           }).catch(ex => {
                            
